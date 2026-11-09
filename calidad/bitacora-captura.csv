@@ -1,0 +1,4 @@
+ejecucion_id,disparador,fuente,inicio_utc,fin_utc,duracion_s,estado,registros,intentos,mensaje
+42700275871,workflow_dispatch,cenace_pend_mda,2026-11-09T21:12:34+00:00,2026-11-09T21:12:38+00:00,4.47,exito,1152,1,
+42700275871,workflow_dispatch,cenace_pend_mda_manana,2026-11-09T21:12:38+00:00,2026-11-09T21:12:40+00:00,1.67,omitido,0,1,ValueError: Respuesta sin valores (status=ZERO_RESULTS); guardada en 211234Z_mda_manana_g0.json.gz
+42700275871,workflow_dispatch,banxico_fix,2026-11-09T21:12:40+00:00,2026-11-09T21:12:42+00:00,2.33,exito,6,1,
