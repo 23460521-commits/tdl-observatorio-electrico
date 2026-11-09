@@ -12,13 +12,13 @@ Cliente: desarrolladores solares y empresas colimenses que evalúan sistemas de 
 |---|---|---|
 | Pregunta y cliente | [propuesta.md §1–3](propuesta.md) · [guion-entrevista.md](guion-entrevista.md) | |
 | Plan de recopilación | [propuesta.md §5](propuesta.md) | Incluye análisis de términos, licencia y robots.txt por fuente, y dos fuentes descartadas por robots.txt (§5.3) |
-| Captura y serie histórica | [.github/workflows/captura.yml](../../.github/workflows/captura.yml) · [extractores/](../../extractores/) · [data/bronce/](../../data/bronce/) | ⟨PENDIENTE: enlace a la primera ejecución exitosa en Actions⟩ |
+| Captura y serie histórica | [.github/workflows/captura.yml](../../.github/workflows/captura.yml) · [extractores/](../../extractores/) · [data/bronce/](../../data/bronce/) | Primera ejecución exitosa: [Captura diaria #1](https://github.com/23460521-commits/tdl-observatorio-electrico/actions/runs/42700275871). Histórico: CENACE 1,030 bloques y Banxico 10 bloques, 0 fallidos |
 
 ## Análisis Estadístico
 | Criterio de la rúbrica | Evidencia (enlace) | Nota del equipo |
 |---|---|---|
 | Preguntas analíticas | [propuesta.md §4](propuesta.md) | Pronóstico (E1), experimento 2³ (E2) y MANOVA/PCA (E3) |
-| Serie histórica identificada | [data/bronce/cenace_pend/historico/](../../data/bronce/cenace_pend/historico/) | Serie diaria desde 2017 (más de 36 periodos) |
+| Serie histórica identificada | [data/bronce/cenace_pend/historico/](../../data/bronce/cenace_pend/historico/) · [data/bronce/banxico_sie/historico/](../../data/bronce/banxico_sie/historico/) | Series diarias desde 2017 (más de 3,500 periodos) |
 
 ## Calidad en los Sistemas de Información
 | Criterio de la rúbrica | Evidencia (enlace) | Nota del equipo |

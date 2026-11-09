@@ -3,7 +3,7 @@
 **Proyecto Integrador TRUSTED DATA LAB** · Tecnológico Nacional de México, campus Colima
 **Equipo:** Julio Alberto Orozco Téllez (23460521) · ⟨PENDIENTE: compañero/a y matrícula⟩
 **Roles:** Data Engineer: ⟨PENDIENTE⟩ · Data Statistician: ⟨PENDIENTE⟩
-**Repositorio:** ⟨PENDIENTE: URL⟩ · **Versión:** E0, noviembre de 2026
+**Repositorio:** https://github.com/23460521-commits/tdl-observatorio-electrico · **Versión:** E0, noviembre de 2026
 
 ---
 
@@ -95,7 +95,7 @@ Respuestas: tiempo de procesamiento de un año de datos (segundos) y registros e
 | Historia disponible | Décadas de datos diarios. Usaremos desde el 1 de enero de 2017, igual que CENACE |
 | Límites de uso | Fuentes de terceros reportan límites por token de cientos de consultas por minuto y decenas de miles por día [7]. Nuestro uso es de 1 consulta diaria y 10 para el histórico |
 | robots.txt | Revisado el 9 de noviembre de 2026: prohíbe solo las rutas `/dyn`, `/ALEPH` y `/V`. La API está en `/SieAPIRest/`, que **está permitida**. El extractor lo verifica en cada ejecución |
-| Términos de uso | Banxico permite de manera general reproducir y usar su información citando la fuente y su dirección de internet (reportado en [7]; ⟨PENDIENTE: confirmar en el aviso legal de banxico.org.mx⟩) |
+| Términos de uso | La salvedad de uso de Banxico autoriza reproducir o utilizar su información, siempre que se mencione la fuente y la dirección de internet del Banco de México para que terceros puedan verificarla. Banxico no asume responsabilidad por discrepancias con la información definitiva [9] |
 | Cómo cumplimos | El token es personal: se guarda como *secret* de GitHub (`BANXICO_TOKEN`) y va en un encabezado, así que nunca aparece en el código, en la URL, en los metadatos de bronce ni en el historial. User-Agent honesto, pausa mínima de 1.5 s y atribución a Banxico en el tablero |
 | Datos personales | Ninguno: solo fechas y valores del tipo de cambio |
 
@@ -122,8 +122,8 @@ Opción preferida: **geoespacial**, con un mapa de las zonas de carga y su preci
 |---|---|
 | Zonas de carga confirmadas contra el servicio | 12 zonas, probadas con el día de operación 2026-11-02, cada una con 24 valores: COLIMA, MANZANILLO, GUADALAJARA, MONTERREY, VDM CENTRO, CULIACAN, HERMOSILLO, MERIDA, PUEBLA, QUERETARO, MORELIA y LEON (`extractores/zonas_confirmadas.json`) |
 | Captura programada | GitHub Actions, diaria a las 21:17 (hora del centro), en `.github/workflows/captura.yml` |
-| Primera ejecución exitosa | ⟨PENDIENTE: fecha y enlace a la ejecución en Actions⟩ |
-| Serie histórica en bronce | CENACE: del 2017-01-01 al 2026-11-08, en 1,030 bloques semanales con 0 bloques fallidos (unos 3,600 días × 24 horas por zona, más de 86,000 registros horarios por zona). Banxico: ⟨PENDIENTE: resultado del histórico⟩ |
+| Primera ejecución exitosa | 9 de noviembre de 2026, *Captura diaria #1*, lanzada manualmente, estado *Success* en 25 s: https://github.com/23460521-commits/tdl-observatorio-electrico/actions/runs/42700275871 |
+| Serie histórica en bronce | CENACE: del 2017-01-01 al 2026-11-08, en 1,030 bloques semanales con 0 bloques fallidos (unos 3,600 días × 24 horas por zona, más de 86,000 registros horarios por zona). Banxico: del 2017-01-01 al 2026-11-08, en 10 bloques anuales con 2,477 datos diarios y 0 bloques fallidos |
 | Almacenamiento en bronce | La respuesta exacta comprimida (`.json.gz`) más un `.meta.json` con URL, fecha de captura, estado HTTP, intentos y SHA-256 |
 | Tolerancia a fallas | Cada captura pide los últimos 4 días, así que una falla se recupera en la siguiente ejecución. Los duplicados que esto genera se eliminan en la capa plata (E1) |
 
@@ -168,3 +168,5 @@ Opción preferida: **geoespacial**, con un mapa de las zonas de carga y su preci
 [7] Tasavera, *Tipos de cambio oficiales: Banxico y TRM*, documentación en Apify (fuente no oficial). https://apify.com/tasavera/latam-official-exchange-rates
 
 [8] NASA Langley Research Center, robots.txt del servicio POWER, consultado el 9 de noviembre de 2026. https://power.larc.nasa.gov/robots.txt
+
+[9] Banco de México, *Salvedad y políticas de uso*. https://www.banxico.org.mx/footer-es/salvedad-politicas-uso-banco-.html
