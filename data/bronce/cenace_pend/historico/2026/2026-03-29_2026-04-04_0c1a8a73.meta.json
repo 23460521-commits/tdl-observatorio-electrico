@@ -1,0 +1,20 @@
+{
+  "url": "https://ws01.cenace.gob.mx:8082/SWPEND/SIM/SIN/MDA/MORELIA,LEON/2026/03/29/2026/04/04/JSON",
+  "http_status": 200,
+  "capturado_utc": "2026-11-09T07:48:58.619497+00:00",
+  "zonas_solicitadas": [
+    "MORELIA",
+    "LEON"
+  ],
+  "fecha_inicio": "2026-03-29",
+  "fecha_fin": "2026-04-04",
+  "sistema": "SIN",
+  "proceso": "MDA",
+  "intentos": 1,
+  "fuente": "cenace_pend",
+  "archivo": "2026-03-29_2026-04-04_0c1a8a73.json.gz",
+  "bytes": 66453,
+  "sha256": "a1b7c319502f19aa1fae2b0ef9065de1c9c1501d847e442edb6e3d4c53658408",
+  "user_agent": "TDL-ObservatorioElectricoColima/0.1.0 (proyecto academico TecNM campus Colima; contacto: CAMBIAR-correo@ejemplo.mx)",
+  "version_extractor": "0.1.0"
+}
