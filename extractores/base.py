@@ -7,7 +7,8 @@ Parte del codigo base del Kit de arranque TDL, con estos cambios:
    igual que la regla de la biblioteca estandar. Un 5xx o un error de red detiene
    la captura en lugar de suponer permiso.
 3. Los errores de red tambien se reintentan con espera exponencial.
-4. Acepta parametros de consulta (para APIs como Open-Meteo).
+4. Acepta parametros de consulta y encabezados (para APIs con token, como Banxico).
+   El token va en un encabezado para que nunca quede en la URL ni en los metadatos.
 """
 import time
 import urllib.robotparser
@@ -56,7 +57,7 @@ class ExtractorEtico:
             self.robots[base] = rp
         return self.robots[base]
 
-    def get(self, url, params=None, intentos=3):
+    def get(self, url, params=None, headers=None, intentos=3):
         reglas = self._reglas(url)
         if not reglas.can_fetch(self.user_agent, url):
             raise PermissionError(f"robots.txt no permite {url}")
@@ -67,7 +68,7 @@ class ExtractorEtico:
             self.ultimos_intentos = i + 1
             self._esperar(dominio, pausa)
             try:
-                r = self.sesion.get(url, params=params, timeout=self.timeout)
+                r = self.sesion.get(url, params=params, headers=headers, timeout=self.timeout)
             except (requests.ConnectionError, requests.Timeout) as e:
                 self.ultimo[dominio] = time.time()
                 ultimo_error = f"{type(e).__name__}: {e}"

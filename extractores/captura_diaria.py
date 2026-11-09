@@ -5,6 +5,7 @@ Cada fuente se registra en calidad/bitacora-captura.csv con su estado:
   fallo    fuente obligatoria sin datos validos (cuenta para la fiabilidad)
   omitido  fuente opcional sin datos; no cuenta como falla
 
+Fuentes obligatorias: CENACE (precios) y Banxico (tipo de cambio FIX).
 CENACE se pide con 4 dias hacia atras: si una ejecucion falla, la siguiente
 recupera el hueco. Los duplicados que esto genera se resuelven en la capa plata.
 
@@ -15,7 +16,7 @@ import time
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
-from extractores import bronce, cenace, config, open_meteo
+from extractores import banxico, bronce, cenace, config
 from extractores.base import ExtractorEtico
 
 
@@ -68,14 +69,15 @@ def main():
             total += res["valores"]
         return total
 
-    def clima():
-        _, res = open_meteo.capturar_pronostico(ex, subruta, f"{sello}_pronostico")
+    def tipo_cambio():
+        # 10 dias hacia atras: cubre fines de semana, dias inhabiles y una falla previa
+        _, res = banxico.capturar(ex, hoy - timedelta(days=10), hoy, subruta, f"{sello}_fix")
         return res["valores"]
 
     estados = [
         ejecutar("cenace_pend_mda", cenace_reciente, ex),
         ejecutar("cenace_pend_mda_manana", cenace_manana, ex, obligatoria=False),
-        ejecutar("open_meteo", clima, ex),
+        ejecutar("banxico_fix", tipo_cambio, ex),
     ]
     sys.exit(1 if "fallo" in estados else 0)
 

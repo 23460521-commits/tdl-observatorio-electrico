@@ -49,23 +49,19 @@ ZONAS_CANDIDATAS = [
     "LEON",
 ]
 
-# --- Open-Meteo: clima por ubicacion -------------------------------------------
-# El orden importa: la API responde una lista en este mismo orden y el nombre
-# de cada ubicacion se guarda en los metadatos para unirlo en la capa plata.
-UBICACIONES = {
-    "colima": (19.2433, -103.7250),
-    "manzanillo": (19.0522, -104.3158),
-    "guadalajara": (20.6597, -103.3496),
-    "monterrey": (25.6866, -100.3161),
-    "cdmx": (19.4326, -99.1332),
-    "culiacan": (24.8091, -107.3940),
-    "hermosillo": (29.0729, -110.9559),
-    "merida": (20.9674, -89.5926),
+# --- Banxico: Sistema de Informacion Economica (SIE) ----------------------------
+# El token es personal: en GitHub va como *secret* BANXICO_TOKEN, nunca en el codigo.
+BANXICO_BASE = "https://www.banxico.org.mx/SieAPIRest/service/v1"
+BANXICO_SERIES = {
+    "SF43718": "Tipo de cambio pesos por dolar E.U.A., FIX",
 }
-OPEN_METEO_VARIABLES = [
-    "temperature_2m",
-    "relative_humidity_2m",
-    "shortwave_radiation",
-    "cloud_cover",
-    "precipitation",
-]
+BANXICO_DESDE = "2017-01-01"
+
+
+def banxico_token():
+    token = os.environ.get("BANXICO_TOKEN", "").strip()
+    if not token:
+        raise RuntimeError(
+            "Falta la variable de entorno BANXICO_TOKEN (token gratuito del SIE de Banxico)"
+        )
+    return token

@@ -19,6 +19,7 @@ jobs:
     timeout-minutes: 20
     env:
       TDL_CONTACTO: ${{ vars.TDL_CONTACTO }}
+      BANXICO_TOKEN: ${{ secrets.BANXICO_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 

@@ -1,0 +1,17 @@
+{
+  "url": "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43718/datos/2023-01-01/2023-12-31",
+  "http_status": 200,
+  "capturado_utc": "2026-11-09T21:10:50.964866+00:00",
+  "series": [
+    "SF43718"
+  ],
+  "fecha_inicio": "2023-01-01",
+  "fecha_fin": "2023-12-31",
+  "intentos": 1,
+  "fuente": "banxico_sie",
+  "archivo": "2023-01-01_2023-12-31.json.gz",
+  "bytes": 10289,
+  "sha256": "e96d854d67116fda29e29fe9a530741cbb7baa7141e99297b51347eb08383bee",
+  "user_agent": "TDL-ObservatorioElectricoColima/0.1.0 (proyecto academico TecNM campus Colima; contacto: CAMBIAR-correo@ejemplo.mx)",
+  "version_extractor": "0.1.0"
+}

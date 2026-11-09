@@ -8,7 +8,7 @@ from datetime import date
 import pytest
 import requests
 
-from extractores import bronce, cenace, open_meteo
+from extractores import banxico, bronce, cenace
 from extractores.base import ExtractorEtico
 
 
@@ -32,8 +32,9 @@ class SesionFalsa:
         self.headers = {}
         self.pedidas = []
 
-    def get(self, url, params=None, timeout=None):
+    def get(self, url, params=None, headers=None, timeout=None):
         self.pedidas.append(url)
+        self.ultimos_headers = headers
         for sufijo, resp in self.rutas.items():
             if url.endswith(sufijo) or sufijo in url:
                 if isinstance(resp, Exception):
@@ -161,10 +162,38 @@ def test_respuesta_vacia_se_guarda_pero_falla(tmp_path):
     assert (tmp_path / cenace.FUENTE / "prueba" / "vacio.json.gz").exists()
 
 
-# --- Open-Meteo y bitacora -----------------------------------------------------------
-def test_resumir_open_meteo_multiples_ubicaciones():
-    payload = [{"hourly": {"time": ["a", "b"]}}, {"hourly": {"time": ["a", "b"]}}]
-    assert open_meteo.resumir(payload) == {"ubicaciones": 2, "valores": 4}
+# --- Banxico y bitacora -------------------------------------------------------------
+PAYLOAD_BANXICO = {"bmx": {"series": [{"idSerie": "SF43718", "titulo": "FIX", "datos": [
+    {"fecha": "02/11/2026", "dato": "18.5012"},
+    {"fecha": "03/11/2026", "dato": "18.4520"},
+]}]}}
+
+
+def test_banxico_url_y_resumen():
+    url = banxico.url_datos(["SF43718"], date(2026, 11, 1), date(2026, 11, 9))
+    assert url.endswith("/series/SF43718/datos/2026-11-01/2026-11-09")
+    assert banxico.resumir(PAYLOAD_BANXICO) == {"series": ["SF43718"], "valores": 2}
+
+
+def test_banxico_token_va_en_encabezado_y_no_se_guarda(tmp_path, monkeypatch):
+    monkeypatch.setenv("BANXICO_TOKEN", "token-secreto-de-prueba")
+    contenido = json.dumps(PAYLOAD_BANXICO).encode()
+    s = SesionFalsa({"/robots.txt": Respuesta(404), "/datos/": Respuesta(200, contenido)})
+    ex = ExtractorEtico(pausa=0, sesion=s)
+    ruta, res = banxico.capturar(ex, date(2026, 11, 1), date(2026, 11, 9), "p", "fix",
+                                 base=tmp_path)
+    assert res["valores"] == 2
+    assert s.ultimos_headers["Bmx-Token"] == "token-secreto-de-prueba"
+    assert "token-secreto" not in s.pedidas[-1]
+    meta = ruta.with_name("fix.meta.json").read_text()
+    assert "token-secreto" not in meta
+
+
+def test_banxico_sin_token_falla_con_mensaje_claro(monkeypatch):
+    monkeypatch.delenv("BANXICO_TOKEN", raising=False)
+    ex = ExtractorEtico(pausa=0, sesion=SesionFalsa({}))
+    with pytest.raises(RuntimeError, match="BANXICO_TOKEN"):
+        banxico.capturar(ex, date(2026, 11, 1), date(2026, 11, 9), "p", "fix")
 
 
 def test_bitacora_escribe_encabezado_una_vez(tmp_path):
