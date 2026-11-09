@@ -28,22 +28,9 @@ Desde el 13 de diciembre de 2025 rigen las Disposiciones Administrativas de Car�
 
 ## 3. Entrevista con el sector
 
-Guion completo: [`guion-entrevista.md`](guion-entrevista.md).
+Por indicación recibida para esta entrega, la entrevista de campo se omitió en E0. La validación del cliente se apoya por ahora en evidencia documental: las reglas de autoconsumo vigentes desde diciembre de 2025 hacen que el valor de cada kWh inyectado a la red por una central de 0.7 MW o más dependa del PML horario (sección 2 y referencia [3]).
 
-| Campo | Registro |
-|---|---|
-| Perfil de la persona entrevistada (giro y cargo, sin nombre) | ⟨PENDIENTE⟩ |
-| Fecha, medio y duración (mínimo 15 min) | ⟨PENDIENTE⟩ |
-
-| # | Pregunta | Respuesta (resumen) |
-|---|---|---|
-| 1 | ¿Cómo estiman hoy el ahorro o el pago por excedentes de un sistema solar? ¿Qué datos usan? | ⟨PENDIENTE⟩ |
-| 2 | ¿Qué proporción de sus proyectos en Colima son menores y mayores a 0.7 MW? | ⟨PENDIENTE⟩ |
-| 3 | ¿En qué horas y meses les importa más el precio de la energía? | ⟨PENDIENTE⟩ |
-| 4 | Si tuvieran un pronóstico del precio por hora en Colima a dos semanas, ¿qué decisión cambiarían? ¿En qué formato lo querrían? | ⟨PENDIENTE⟩ |
-| 5 | ¿Cuánto les cuesta hoy no tener esta información y cuánto pagarían por ella? | ⟨PENDIENTE⟩ |
-
-**Lo que aprendimos:** ⟨PENDIENTE: 3 a 5 líneas. Qué confirmó la entrevista, qué cambió de la propuesta y qué no esperábamos.⟩
+El guion ya está preparado en [`guion-entrevista.md`](guion-entrevista.md). Está dirigido a un instalador o desarrollador de sistemas solares, o al responsable de energía de una empresa colimense con consumo alto, y tiene 5 preguntas sobre cómo estiman hoy el ahorro, el tamaño de sus proyectos, cuándo les importa el precio, qué decisión cambiaría con un pronóstico y cuánto pagarían. Si se realiza en una entrega posterior, sus respuestas se agregarán aquí y alimentarán el modelo de negocio de E4 y el bono de cliente real.
 
 ## 4. Preguntas analíticas
 

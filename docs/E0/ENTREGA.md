@@ -10,7 +10,7 @@ Cliente: desarrolladores solares y empresas colimenses que evalúan sistemas de 
 ## Ingeniería de Datos
 | Criterio de la rúbrica | Evidencia (enlace) | Nota del equipo |
 |---|---|---|
-| Pregunta y cliente | [propuesta.md §1–3](propuesta.md) · [guion-entrevista.md](guion-entrevista.md) | |
+| Pregunta y cliente | [propuesta.md §1–3](propuesta.md) · [guion-entrevista.md](guion-entrevista.md) | La entrevista se omitió en E0 por indicación recibida; el cliente se sustenta con la regulación de autoconsumo y el guion queda listo |
 | Plan de recopilación | [propuesta.md §5](propuesta.md) | Incluye análisis de términos, licencia y robots.txt por fuente, y dos fuentes descartadas por robots.txt (§5.3) |
 | Captura y serie histórica | [.github/workflows/captura.yml](../../.github/workflows/captura.yml) · [extractores/](../../extractores/) · [data/bronce/](../../data/bronce/) | Primera ejecución exitosa: [Captura diaria #1](https://github.com/23460521-commits/tdl-observatorio-electrico/actions/runs/42700275871). Histórico: CENACE 1,030 bloques y Banxico 10 bloques, 0 fallidos |
 
