@@ -1,0 +1,13 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# Reglas explicitas para que el resultado no dependa de la version de ruff.
+# Los `except Exception` de los scripts de captura son intencionales: toda falla
+# se registra en la bitacora en lugar de detener las demas fuentes.
+select = ["E", "F", "W", "I", "UP", "B"]
