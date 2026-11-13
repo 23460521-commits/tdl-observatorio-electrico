@@ -11,3 +11,6 @@ ejecucion_id,disparador,fuente,inicio_utc,fin_utc,duracion_s,estado,registros,in
 43206165315,schedule,cenace_pend_mda,2026-11-12T11:06:08+00:00,2026-11-12T11:06:15+00:00,6.36,exito,1152,1,
 43206165315,schedule,cenace_pend_mda_manana,2026-11-12T11:06:15+00:00,2026-11-12T11:06:16+00:00,1.63,omitido,0,1,ValueError: Respuesta sin valores (status=ZERO_RESULTS); guardada en 110608Z_mda_manana_g0.json.gz
 43206165315,schedule,banxico_fix,2026-11-12T11:06:16+00:00,2026-11-12T11:06:19+00:00,2.27,exito,7,1,
+43413090659,schedule,cenace_pend_mda,2026-11-13T10:57:17+00:00,2026-11-13T10:57:24+00:00,6.8,exito,1152,1,
+43413090659,schedule,cenace_pend_mda_manana,2026-11-13T10:57:24+00:00,2026-11-13T10:57:25+00:00,1.65,omitido,0,1,ValueError: Respuesta sin valores (status=ZERO_RESULTS); guardada en 105717Z_mda_manana_g0.json.gz
+43413090659,schedule,banxico_fix,2026-11-13T10:57:25+00:00,2026-11-13T10:57:27+00:00,2.27,exito,8,1,
