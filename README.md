@@ -1,18 +1,48 @@
-# Observatorio Eléctrico de Colima · TRUSTED DATA LAB
+# ObraPrecio · TRUSTED DATA LAB
 
-**¿Cuándo vale más la electricidad en Colima y cuánto vale la energía solar que un negocio inyecta a la red según la hora y el día?**
+**¿Cuánto ha subido el costo de construir una vivienda en mi ciudad y qué lo está moviendo: los materiales, la maquinaria o la mano de obra?**
 
-Observatorio de datos del Proyecto Integrador TRUSTED DATA LAB (TecNM campus Colima): Ingeniería de Datos, Análisis Estadístico para Ciencia de Datos y Calidad en los Sistemas de Información.
+Proyecto Integrador TRUSTED DATA LAB (TecNM campus Colima): Ingeniería de Datos, Análisis Estadístico para Ciencia de Datos y Calidad en los Sistemas de Información.
 
-- Tablero público: _pendiente (E1)_
-- Equipo: _integrantes_
+- Equipo: Julio Alberto Orozco Téllez · Ángel Salvador Álvarez · José Rey Sánchez Navarro
+- Entregas: [E0](docs/E0/ENTREGA.md) · [E1](docs/E1/ENTREGA.md) · [por qué cambió el tema](docs/E1/pivote-obraprecio.md)
+- Tablero público: _pendiente (E2)_
+
+> El repositorio conserva el nombre de la propuesta original (Observatorio Eléctrico de Colima). La captura de CENACE sigue activa en bronce, pero el producto es ObraPrecio.
 
 ## Fuentes
 
 | Fuente | Qué aporta | Acceso | Frecuencia de captura |
 |---|---|---|---|
-| CENACE, servicio web SW-PEND | Precio horario por zona de carga (MXN/MWh) y sus componentes de energía, pérdidas y congestión, Mercado de Día en Adelanto | API pública sin llave | Diaria (GitHub Actions) |
-| Banxico, API del SIE | Tipo de cambio FIX (pesos por dólar), serie SF43718 | API pública con token gratuito | Diaria (GitHub Actions) |
+| INEGI, Índice Nacional de Precios Productor, "Construcción residencial por ciudad" (base julio 2019 = 100) | Índice general, materiales, alquiler de maquinaria y mano de obra para 46 ciudades y el total nacional, mensual | Consulta pública sin llave | Semanal (lunes) |
+| Banxico, API del SIE | Tipo de cambio FIX (pesos por dólar), serie SF43718 | API pública con token gratuito | Diaria |
+| CENACE, servicio web SW-PEND (propuesta original) | Precio horario de la electricidad por zona de carga | API pública sin llave | Diaria |
+
+Fuente de los datos de construcción: INEGI, Índice Nacional de Precios Productor. Fuente del tipo de cambio: Banco de México.
+
+## Capas de datos
+
+```
+fuentes -> data/bronce (respuesta exacta + SHA-256)
+        -> puerta de calidad (Pandera)  -> data/cuarentena (rechazados, con motivo)
+        -> data/plata (tablas limpias y tipadas)
+        -> data/oro (tablas de análisis)
+```
+
+| Tabla | Contenido |
+|---|---|
+| `data/plata/inpp_construccion.csv` | Una fila por serie y mes desde 1973, con ciudad, estado, región y componente |
+| `data/plata/fix_diario.csv` | FIX por día natural; `imputado` marca fines de semana y festivos |
+| `data/oro/obraprecio_panel_mensual.csv` | Desde 2004: índice, variaciones, nivel de inflación, banderas de atípicos, normalizaciones y tipo de cambio |
+| `data/oro/obraprecio_ciudad_mensual.csv` | Una fila por ciudad y mes con los 4 componentes en columnas |
+| `data/oro/resumen_region_anual.csv` | Agregado por región, año y componente |
+| `data/oro/ranking_ciudades.csv` | Último mes: ciudades ordenadas por variación anual |
+
+```bash
+python -m pipeline.ejecutar      # regenera plata, oro, cuarentena y calidad/reporte-puerta.json
+```
+
+Para regenerar el catálogo de series o bajar de nuevo la historia de INEGI: `python -m extractores.inegi --catalogo --historico`.
 
 ## Puesta en marcha (una sola vez)
 
@@ -51,6 +81,7 @@ python -m pytest                   # pruebas sin internet
 ## Cómo funciona la captura
 
 - `extractores/base.py`: extractor ético del Kit. Lee robots.txt, se identifica, espera al menos 1.5 s entre peticiones al mismo dominio y reintenta con espera exponencial.
+- `extractores/inegi.py`: los lunes pide a INEGI el año en curso y el anterior de las 188 series (4 peticiones).
 - `extractores/captura_diaria.py`: pide a CENACE los últimos 4 días (así una ejecución fallida se recupera en la siguiente) y el día de mañana si ya está publicado, y a Banxico los últimos 10 días del tipo de cambio FIX.
 - Cada respuesta se guarda **tal como llegó** en `data/bronce/<fuente>/`, comprimida, con un `.meta.json` que registra URL, fecha de captura, estado HTTP y SHA-256.
 - Cada ejecución agrega una fila por fuente a `calidad/bitacora-captura.csv` (estado `exito`, `fallo` u `omitido`). Con esa bitácora se calculan MTBF, MTTR y disponibilidad en E1.

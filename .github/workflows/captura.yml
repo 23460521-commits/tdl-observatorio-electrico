@@ -1,4 +1,4 @@
-name: Captura diaria
+name: Captura diaria y pipeline
 
 on:
   schedule:
@@ -36,12 +36,19 @@ jobs:
         continue-on-error: true # aunque falle, se guarda la bitacora
         run: python -m extractores.captura_diaria
 
-      - name: Subir datos y bitacora
+      # Bronce -> puerta de calidad -> plata -> oro. Corre aunque una fuente haya fallado:
+      # con lo que si llego se actualizan las capas y lo invalido va a cuarentena.
+      - name: Pipeline plata y oro con puerta de calidad
+        id: pipeline
+        continue-on-error: true
+        run: python -m pipeline.ejecutar
+
+      - name: Subir datos y bitacoras
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/bronce calidad/bitacora-captura.csv
+          git add data/bronce data/plata data/oro data/cuarentena calidad
           if git diff --staged --quiet; then
             echo "Sin cambios que subir"
           else
@@ -50,6 +57,6 @@ jobs:
             git push
           fi
 
-      - name: Marcar la ejecucion como fallida si una fuente obligatoria fallo
-        if: steps.captura.outcome == 'failure'
+      - name: Marcar la ejecucion como fallida si una fuente obligatoria o la puerta fallo
+        if: steps.captura.outcome == 'failure' || steps.pipeline.outcome == 'failure'
         run: exit 1

@@ -1,0 +1,115 @@
+{
+  "estado": "exito",
+  "inegi_inpp": {
+    "registros_bronce": 93572,
+    "registros_plata": 68968,
+    "registros_cuarentena": 24604,
+    "duplicados_identicos_colapsados": 0,
+    "pct_aceptado": 73.71,
+    "cuarentena_por_motivo": [
+      {
+        "etapa": "formato",
+        "motivo": "valor_no_existe_en_fuente_NE",
+        "n": 24604
+      }
+    ]
+  },
+  "banxico_sie": {
+    "registros_bronce": 2509,
+    "registros_plata": 2481,
+    "registros_cuarentena": 0,
+    "duplicados_identicos_colapsados": 28,
+    "pct_aceptado": 98.88,
+    "cuarentena_por_motivo": []
+  },
+  "cobertura": {
+    "inpp_desde": "1973-01-01",
+    "inpp_hasta": "2025-07-01",
+    "ciudades": 47,
+    "series": 188,
+    "fix_desde": "2017-01-02",
+    "fix_hasta": "2026-11-12",
+    "oro_desde": "2004-01-01",
+    "oro_filas": 48692
+  },
+  "revisiones_de_conjunto": [
+    {
+      "revision": "continuidad_mensual",
+      "ok": true,
+      "grave": false,
+      "detalle": "0 meses faltantes dentro de las series"
+    },
+    {
+      "revision": "cobertura_de_series",
+      "ok": true,
+      "grave": false,
+      "detalle": "188 de 188 series con datos; faltan: []"
+    },
+    {
+      "revision": "base_julio_2019_igual_a_100",
+      "ok": true,
+      "grave": false,
+      "detalle": "188 series en julio 2019; desviacion maxima respecto a 100: 0.00e+00"
+    },
+    {
+      "revision": "ciudades_con_los_4_componentes",
+      "ok": true,
+      "grave": false,
+      "detalle": "47 ciudades; incompletas: []"
+    },
+    {
+      "revision": "fix_dias_habiles_cubiertos",
+      "ok": true,
+      "grave": false,
+      "detalle": "93 de 2574 dias de lunes a viernes sin FIX (3.6%; los festivos bancarios no tienen FIX)"
+    },
+    {
+      "revision": "tablas_no_vacias",
+      "ok": true,
+      "grave": true,
+      "detalle": "inpp=68968 filas, fix=2481 filas"
+    }
+  ],
+  "salidas": [
+    {
+      "archivo": "data/plata/inpp_construccion.csv",
+      "filas": 68968,
+      "sha256": "b1c7262f12bf1b01d1976a8916ba802d79cd739d66e68b71f04d6394e37f5767"
+    },
+    {
+      "archivo": "data/plata/fix_diario.csv",
+      "filas": 3602,
+      "sha256": "68d91084ff6007fb797fee78c9b2da30419462fcf8dd1fd2893a886317381d2f"
+    },
+    {
+      "archivo": "data/cuarentena/inegi_inpp.csv",
+      "filas": 24604,
+      "sha256": "03fb35498e4426a99a1354292efcdcbe1759871f01231b370e04e4306713594e"
+    },
+    {
+      "archivo": "data/cuarentena/banxico_sie.csv",
+      "filas": 0,
+      "sha256": "e532461c31d0603f13527d2c11fcc8f793b12610dc7e68d5a77e28c0c39f4874"
+    },
+    {
+      "archivo": "data/oro/obraprecio_panel_mensual.csv",
+      "filas": 48692,
+      "sha256": "eb72c43ad513bff94b398f9fe626576eaf982bd37d8ab5cd3e3396aa5b0b5b66"
+    },
+    {
+      "archivo": "data/oro/obraprecio_ciudad_mensual.csv",
+      "filas": 12173,
+      "sha256": "1ebc28402231526fd106735855c4ddb713ba640028de053b17059afb2f1376f9"
+    },
+    {
+      "archivo": "data/oro/resumen_region_anual.csv",
+      "filas": 352,
+      "sha256": "f062ffe2617652b1a9e51ba046ce4a5c871da80fc3ac0412d2a53ecb86d41e65"
+    },
+    {
+      "archivo": "data/oro/ranking_ciudades.csv",
+      "filas": 46,
+      "sha256": "4f4f58901692b8e54d7ef30621b63f02d8bbabe23293d6d5c85b446f72efa2b2"
+    }
+  ]
+}

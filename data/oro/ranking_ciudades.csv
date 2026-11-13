@@ -1,0 +1,47 @@
+fecha,ciudad_id,ciudad,estado,region,var_anual_general,var_anual_mano_obra,var_anual_maquinaria,var_anual_materiales,lugar,var_anual_nacional,supera_nacional
+2025-07-01,monterrey,Monterrey,Nuevo León,Norte,8.780885,10.912232,2.409382,8.420842,1,4.448986,True
+2025-07-01,san_andres_tuxtla,San Andrés Tuxtla,Veracruz,Sur,8.774353,43.492016,39.360211,2.660725,2,4.448986,True
+2025-07-01,morelia,Morelia,Michoacán,Centro Norte,7.664151,10.497739,1.719057,7.223503,3,4.448986,True
+2025-07-01,leon,León,Guanajuato,Centro,7.478276,7.942334,1.594422,7.457882,4,4.448986,True
+2025-07-01,puebla,Puebla,Puebla,Centro,7.001746,5.498195,6.694613,7.2608,5,4.448986,True
+2025-07-01,tlaxcala,Tlaxcala,Tlaxcala,Centro,6.902038,12.256766,6.195659,5.726501,6,4.448986,True
+2025-07-01,cordoba,Córdoba,Veracruz,Sur,6.776702,12.263034,4.967774,5.826367,7,4.448986,True
+2025-07-01,chetumal,Chetumal,Quintana Roo,Sur,6.271694,-0.000432,0.0,7.294692,8,4.448986,True
+2025-07-01,tampico,Tampico,Tamaulipas,Norte,5.94978,8.193064,1.04484,5.636201,9,4.448986,True
+2025-07-01,chihuahua,Chihuahua,Chihuahua,Norte,5.719619,14.551762,0.8702,4.131086,10,4.448986,True
+2025-07-01,san_luis_potosi,San Luis Potosí,San Luis Potosí,Centro Norte,5.598894,3.014213,1.070065,6.119078,11,4.448986,True
+2025-07-01,tepatitlan,Tepatitlán,Jalisco,Centro Norte,5.582994,9.994951,13.5379,4.563429,12,4.448986,True
+2025-07-01,cuernavaca,Cuernavaca,Morelos,Centro,5.55646,4.68341,0.0,5.764955,13,4.448986,True
+2025-07-01,matamoros,Matamoros,Tamaulipas,Norte,5.369356,3.644226,6.819725,5.679185,14,4.448986,True
+2025-07-01,queretaro,Querétaro,Querétaro,Centro,5.060625,6.26595,0.220236,4.919636,15,4.448986,True
+2025-07-01,villahermosa,Villahermosa,Tabasco,Sur,5.011777,11.572806,0.0,3.70137,16,4.448986,True
+2025-07-01,guadalajara,Guadalajara,Jalisco,Centro Norte,4.955788,7.954289,8.65401,4.432848,17,4.448986,True
+2025-07-01,jacona,Jacona,Michoacán,Centro Norte,4.918545,6.205749,0.0,4.773893,18,4.448986,True
+2025-07-01,tapachula,Tapachula,Chiapas,Sur,4.673466,0.000149,9.07295,5.464418,19,4.448986,True
+2025-07-01,merida,Mérida,Yucatán,Sur,4.600296,11.257381,7.784807,3.500429,20,4.448986,True
+2025-07-01,campeche,Campeche,Campeche,Sur,4.573388,0.0,18.691588,5.184394,21,4.448986,True
+2025-07-01,ciudad_acuna,Ciudad Acuña,Coahuila,Norte,4.384214,2.841236,8.262473,4.59685,22,4.448986,False
+2025-07-01,tulancingo,Tulancingo,Hidalgo,Centro,4.31306,10.193727,0.0,3.253879,23,4.448986,False
+2025-07-01,culiacan,Culiacán,Sinaloa,Centro Norte,4.301681,0.0,3.064958,5.109119,24,4.448986,False
+2025-07-01,durango,Durango,Durango,Centro Norte,4.214393,7.066939,1.956947,3.672067,25,4.448986,False
+2025-07-01,veracruz,Veracruz,Veracruz,Sur,4.125483,7.757571,17.193203,3.198491,26,4.448986,False
+2025-07-01,ciudad_juarez,Ciudad Juárez,Chihuahua,Norte,3.916143,7.384556,11.247177,3.321497,27,4.448986,False
+2025-07-01,torreon,Torreón,Coahuila,Norte,3.736818,3.97836,4.10501,3.69727,28,4.448986,False
+2025-07-01,iguala,Iguala,Guerrero,Sur,3.657998,0.0,0.0,4.208617,29,4.448986,False
+2025-07-01,oaxaca,Oaxaca,Oaxaca,Sur,3.444606,7.05442,16.868738,2.665256,30,4.448986,False
+2025-07-01,cortazar,Cortazar,Guanajuato,Centro,3.378392,14.558365,3.112494,0.628783,31,4.448986,False
+2025-07-01,toluca,Toluca,Estado de México,Centro,3.332415,0.0,0.220841,3.869458,32,4.448986,False
+2025-07-01,ciudad_de_mexico_am,Ciudad de México (AM),Ciudad de México,Centro,3.051775,3.323446,1.637048,3.020251,33,4.448986,False
+2025-07-01,aguascalientes,Aguascalientes,Aguascalientes,Centro Norte,3.024558,5.758718,12.054904,2.412626,34,4.448986,False
+2025-07-01,tepic,Tepic,Nayarit,Centro Norte,2.944023,6.482376,0.0,2.357339,35,4.448986,False
+2025-07-01,acapulco,Acapulco,Guerrero,Sur,2.362258,4.990159,8.281789,1.821425,36,4.448986,False
+2025-07-01,mexicali,Mexicali,Baja California,Norte,2.346198,0.0,11.976703,2.573065,37,4.448986,False
+2025-07-01,colima,Colima,Colima,Centro Norte,2.303692,7.226767,4.270935,1.454468,38,4.448986,False
+2025-07-01,tehuantepec,Tehuantepec,Oaxaca,Sur,2.247339,0.0,0.0,2.638564,39,4.448986,False
+2025-07-01,huatabampo,Huatabampo,Sonora,Norte,2.086525,6.147895,-6.526867,1.518315,40,4.448986,False
+2025-07-01,fresnillo,Fresnillo,Zacatecas,Centro Norte,2.05783,0.0,11.408133,2.281049,41,4.448986,False
+2025-07-01,tijuana,Tijuana,Baja California,Norte,1.978596,3.847615,4.44,1.619739,42,4.448986,False
+2025-07-01,monclova,Monclova,Coahuila,Norte,1.824795,1.667819,0.0,1.870367,43,4.448986,False
+2025-07-01,hermosillo,Hermosillo,Sonora,Norte,0.793793,3.679212,7.22653,0.230455,44,4.448986,False
+2025-07-01,ciudad_jimenez,Ciudad Jiménez,Chihuahua,Norte,-0.355094,7.960951,9.218881,-1.973953,45,4.448986,False
+2025-07-01,la_paz,La Paz,Baja California Sur,Centro Norte,-0.398423,0.0,1.068984,-0.477412,46,4.448986,False

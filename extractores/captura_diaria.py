@@ -6,17 +6,21 @@ Cada fuente se registra en calidad/bitacora-captura.csv con su estado:
   omitido  fuente opcional sin datos; no cuenta como falla
 
 Fuentes obligatorias: CENACE (precios) y Banxico (tipo de cambio FIX).
+INEGI (indice de construccion por ciudad, mensual) es la fuente de ObraPrecio: se
+captura los lunes, o cualquier dia si se define TDL_FORZAR_INEGI=1. Pide el anio en
+curso y el anterior, asi una revision de cifras de la fuente tambien queda capturada.
 CENACE se pide con 4 dias hacia atras: si una ejecucion falla, la siguiente
 recupera el hueco. Los duplicados que esto genera se resuelven en la capa plata.
 
 Uso:  python -m extractores.captura_diaria
 """
+import os
 import sys
 import time
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
-from extractores import banxico, bronce, cenace, config
+from extractores import banxico, bronce, cenace, config, inegi
 from extractores.base import ExtractorEtico
 
 
@@ -74,7 +78,19 @@ def main():
         _, res = banxico.capturar(ex, hoy - timedelta(days=10), hoy, subruta, f"{sello}_fix")
         return res["valores"]
 
+    def indice_construccion():
+        if hoy.weekday() != 0 and os.environ.get("TDL_FORZAR_INEGI") != "1":
+            raise RuntimeError("INEGI se captura los lunes (indice mensual); hoy no toca")
+        total = 0
+        for i, claves in enumerate(inegi.grupos(inegi.cargar_series())):
+            _, res = inegi.capturar(
+                ex, claves, hoy.year - 1, hoy.year, subruta, f"{sello}_inpp_g{i}"
+            )
+            total += res["valores"]
+        return total
+
     estados = [
+        ejecutar("inegi_inpp_construccion", indice_construccion, ex, obligatoria=False),
         ejecutar("cenace_pend_mda", cenace_reciente, ex),
         ejecutar("cenace_pend_mda_manana", cenace_manana, ex, obligatoria=False),
         ejecutar("banxico_fix", tipo_cambio, ex),

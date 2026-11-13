@@ -1,0 +1,39 @@
+name: CI
+
+# Integracion continua: en cada cambio de codigo se revisa el estilo, se corren las
+# pruebas (sin red) y se ejecuta el pipeline completo contra los datos del repositorio.
+# Si la puerta de calidad detecta una falla grave, el cambio queda marcado en rojo.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["data/**", "calidad/bitacora-*.csv", "**.md"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install -r requirements-dev.txt
+
+      - name: Estilo (ruff)
+        run: ruff check .
+
+      - name: Pruebas (pytest)
+        run: python -m pytest -q
+
+      - name: Pipeline completo con puerta de calidad
+        run: python -m pipeline.ejecutar

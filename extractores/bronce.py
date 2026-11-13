@@ -19,10 +19,11 @@ def ahora_utc():
     return datetime.now(UTC)
 
 
-def guardar(fuente, contenido, meta, subruta, nombre, base=None):
+def guardar(fuente, contenido, meta, subruta, nombre, base=None, ext="json"):
+    """`ext` es el formato original de la respuesta (json, csv...); solo cambia el nombre."""
     destino = (base or config.DIR_BRONCE) / fuente / subruta
     destino.mkdir(parents=True, exist_ok=True)
-    ruta = destino / f"{nombre}.json.gz"
+    ruta = destino / f"{nombre}.{ext}.gz"
     # filename="" y mtime=0: el mismo contenido produce el mismo .gz (reproducible)
     with open(ruta, "wb") as f, gzip.GzipFile(filename="", fileobj=f, mode="wb", mtime=0) as gz:
         gz.write(contenido)

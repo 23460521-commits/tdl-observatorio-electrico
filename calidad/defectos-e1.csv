@@ -1,0 +1,7 @@
+numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_origen,descripcion
+1,2026-11-13,datos,codificacion,prueba,5,,El catalogo de INEGI trae un componente escrito "-- Materiales de construccion"; quedaba como un quinto componente. Se normaliza el nombre en extractores/inegi.py y se agrego prueba.
+2,2026-11-13,funcion,diseno,prueba,15,,IQR y Z robusto marcaban como atipico todo ajuste de mano de obra y maquinaria (series escalonadas: MAD = 0). Se agrego limpieza.referencia() y prueba del caso.
+3,2026-11-13,funcion,codificacion,prueba,5,,ranking_ciudades fallaba (IndexError) si el ultimo mes no tenia dato Nacional. Detectado por la prueba de punta a punta.
+4,2026-11-13,entorno,codificacion,prueba,3,,El reporte usaba rutas relativas al repositorio y fallaba al escribir en otra carpeta (pruebas con tmp_path).
+5,2026-11-13,documentacion,documentacion,revision,10,,El cuaderno afirmaba que las celdas faltantes coincidian con los N/E y que las ciudades entraron en oleadas de 12/24/11; los datos dicen 24604 N/E de 49660 celdas y oleadas de 1/23/23. Se corrigio el texto contra las salidas.
+6,2026-11-13,estilo,codificacion,compilacion,3,,18 lineas de mas de 100 caracteres detectadas por ruff.
