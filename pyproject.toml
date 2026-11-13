@@ -5,6 +5,8 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+# Los cuadernos son evidencia (celdas compactas); el estilo se exige al codigo de pipeline/.
+extend-exclude = ["*.ipynb"]
 
 [tool.ruff.lint]
 # Reglas explicitas para que el resultado no dependa de la version de ruff.
