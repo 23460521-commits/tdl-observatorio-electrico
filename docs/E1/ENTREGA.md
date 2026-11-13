@@ -1,6 +1,6 @@
 # Entrega E1 · ObraPrecio (TRUSTED DATA LAB)
 
-Equipo: Julio Alberto Orozco Téllez · Ángel Salvador Álvarez · José Rey Sánchez Navarro (solo Calidad en los Sistemas de Información) · Etiquetas: `e1` (Ingeniería de Datos) y `e1-final` (las tres materias) · Tablero: pendiente (E2)
+Equipo: Julio Alberto Orozco Téllez · Ángel Salvador Álvarez · José Rey Sánchez Navarro (solo Calidad en los Sistemas de Información) · Etiquetas: `e1` (Ingeniería de Datos, datos a julio de 2025), `e1-final` (las tres materias, datos a julio de 2025) y `e1-v2` (las tres materias con el índice vigente, datos a octubre de 2026) · Tablero: pendiente (E2)
 
 ## Resumen en tres líneas
 ObraPrecio responde cuánto ha subido el costo de construir vivienda en 46 ciudades de México y qué lo mueve (materiales, maquinaria o mano de obra), con el índice oficial de INEGI integrado con el tipo de cambio de Banxico.
