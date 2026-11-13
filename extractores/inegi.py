@@ -164,7 +164,7 @@ def historico(extractor, anio_f, base=None):
     """Baja toda la historia en bloques de series. Salta los bloques que ya existen."""
     total, bloques = 0, grupos(cargar_series())
     for i, claves in enumerate(bloques):
-        nombre = f"{config.INEGI_ANIO_INICIAL}_{anio_f}_g{i:02d}"
+        nombre = f"{config.INEGI_ANIO_INICIAL}_{anio_f}_e{config.INEGI_ESTRUCTURA[6:10]}_g{i:02d}"
         destino = (base or config.DIR_BRONCE) / FUENTE / "historico" / f"{nombre}.csv.gz"
         if destino.exists():
             continue

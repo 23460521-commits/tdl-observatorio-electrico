@@ -158,6 +158,10 @@ def correr(dir_bronce=None, dir_plata=None, dir_oro=None, dir_cuarentena=None, s
             "oro_desde": str(panel["fecha"].min().date()),
             "oro_filas": len(panel),
         },
+        "estructura_inegi": {
+            "vigente": config.INEGI_ESTRUCTURA,
+            "archivos_de_estructuras_anteriores_no_leidos": crudo_inpp.attrs.get("ignorados", {}),
+        },
         "revisiones_de_conjunto": revisiones,
         "salidas": salidas,
     }

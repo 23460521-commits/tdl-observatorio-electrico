@@ -34,15 +34,15 @@ Estado: **borrador para revisión del responsable de Calidad** (José Rey Sánch
 | RNF-03 | Fiabilidad: tolerancia a fallos | Un error temporal de red no tumba la captura | Hasta 3 intentos con espera creciente | 0 reintentos necesarios; cubierto por pruebas | Cumple |
 | RNF-04 | Adecuación funcional: completitud | Las series no tienen huecos | Meses faltantes dentro de una serie = 0 | 0 (revisión `continuidad_mensual`) | Cumple |
 | RNF-05 | Adecuación funcional: exactitud | Lo publicado coincide con la fuente | Base julio 2019 = 100 en las 188 series | Desviación máxima 0 | Cumple |
-| RNF-06 | Seguridad: confidencialidad | Ningún secreto en el repositorio | Hallazgos de gitleaks = 0 | 0 en 12 commits | Cumple |
+| RNF-06 | Seguridad: confidencialidad | Ningún secreto en el repositorio | Hallazgos de gitleaks = 0 | 0 en 13 commits | Cumple |
 | RNF-07 | Seguridad: integridad | Dependencias sin vulnerabilidades conocidas | Hallazgos de pip-audit = 0 | 0 en 29 paquetes | Cumple |
 | RNF-08 | Seguridad: privacidad | Cero datos personales | Solo estadística agregada; esquema estricto | Sin columnas fuera del contrato | Cumple |
-| RNF-09 | Mantenibilidad: capacidad de prueba | Todo cambio pasa pruebas automáticas | CI en verde antes de entregar | 59 pruebas, CI activo | Cumple |
+| RNF-09 | Mantenibilidad: capacidad de prueba | Todo cambio pasa pruebas automáticas | CI en verde antes de entregar | 60 pruebas, CI activo | Cumple |
 | RNF-10 | Mantenibilidad: analizabilidad | Estilo uniforme | `ruff check` sin errores | 0 errores | Cumple |
-| RNF-11 | Eficiencia de desempeño | El pipeline completo corre rápido | ≤ 60 s en GitHub Actions | 5.3 s en la sesión de desarrollo; sin medir aún en Actions | Por confirmar |
+| RNF-11 | Eficiencia de desempeño | El pipeline completo corre rápido | ≤ 60 s en GitHub Actions | 6 s en la sesión de desarrollo; sin medir aún en Actions | Por confirmar |
 | RNF-12 | Portabilidad: reproducibilidad | Cualquiera puede regenerar los resultados | Tres comandos documentados | README y fichas de entrega | Cumple |
 | RNF-13 | Uso ético de las fuentes | Respetar robots.txt, identificarse y no saturar | ≥ 1 s entre peticiones; User-Agent con contacto | Cubierto por pruebas de `extractores/base.py` | Cumple |
-| RNF-14 | Oportunidad del dato | El último mes publicado por INEGI está disponible | Rezago ≤ 2 meses respecto a la fuente | Último dato: julio 2025 | **No cumple** (ver limitación 1 de la ficha) |
+| RNF-14 | Oportunidad del dato | El último mes publicado por INEGI está disponible | Rezago ≤ 2 meses respecto a la fuente | Último dato: octubre de 2026, capturado el 13 de noviembre de 2026 | Cumple (no cumplía con la estructura anterior del índice; ver limitación 1 de la ficha) |
 
 ## Trazabilidad
-Cada requerimiento cumplido apunta a una prueba, un archivo de datos o una revisión automática. Los pendientes (RF-09 a RF-11, RNF-14) son el alcance de E2.
+Cada requerimiento cumplido apunta a una prueba, un archivo de datos o una revisión automática. Los pendientes (RF-09 a RF-11) son el alcance de E2.

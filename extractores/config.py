@@ -2,6 +2,7 @@
 
 Todo lo que cambia entre equipos o entre entregas vive aqui, no regado en el codigo.
 """
+
 import os
 from pathlib import Path
 
@@ -30,10 +31,10 @@ ARCHIVO_ZONAS = RAIZ / "extractores" / "zonas_confirmadas.json"
 
 # --- CENACE: precios por zona de carga (servicio web SW-PEND) -------------------
 CENACE_BASE = "https://ws01.cenace.gob.mx:8082"
-CENACE_SISTEMA = "SIN"   # Sistema Interconectado Nacional
-CENACE_PROCESO = "MDA"   # Mercado de Dia en Adelanto
-CENACE_MAX_DIAS = 7      # limite de dias por peticion
-CENACE_MAX_ZONAS = 10    # limite de zonas por peticion
+CENACE_SISTEMA = "SIN"  # Sistema Interconectado Nacional
+CENACE_PROCESO = "MDA"  # Mercado de Dia en Adelanto
+CENACE_MAX_DIAS = 7  # limite de dias por peticion
+CENACE_MAX_ZONAS = 10  # limite de zonas por peticion
 
 # Nombres a probar con `python -m extractores.descubrir_zonas`.
 # Solo los que respondan con datos pasan a zonas_confirmadas.json.
@@ -65,10 +66,15 @@ BANXICO_DESDE = "2017-01-01"
 # Estructura "Construccion residencial por ciudad" (antes INCEVIS), base julio 2019 = 100:
 # 46 ciudades + Nacional, cada una con indice general y tres componentes
 # (materiales, alquiler de maquinaria y mano de obra). Consulta publica, sin llave.
+#
+# INEGI actualizo la canasta del INPP en agosto de 2025 y publico el indice en una
+# estructura nueva (con otras claves de serie). La anterior quedo congelada en julio de
+# 2025. Se consulta la vigente; lo capturado de la anterior se conserva en bronce.
 INEGI_BASE = "https://www.inegi.org.mx/app/indicesdeprecios"
-INEGI_ESTRUCTURA = "1120015000400010"
+INEGI_ESTRUCTURA = "1120019000100010"  # vigente (INPP actualizacion 2025)
+INEGI_ESTRUCTURA_ANTERIOR = "1120015000400010"  # congelada en julio de 2025
 INEGI_TITULO = "Construcción residencial por ciudad"
-INEGI_ANIO_INICIAL = 1973   # primer periodo que publica la fuente (serie Nacional)
+INEGI_ANIO_INICIAL = 1973  # primer periodo que publica la fuente (serie Nacional)
 INEGI_SERIES_POR_PETICION = 48  # 12 ciudades x 4 series; mantiene corta la URL
 ARCHIVO_SERIES_INEGI = RAIZ / "extractores" / "inegi_series.json"
 

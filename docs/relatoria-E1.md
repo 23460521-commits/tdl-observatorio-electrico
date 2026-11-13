@@ -21,11 +21,11 @@ Periodo: 9 al 13 de noviembre de 2026 · Equipo: Julio Alberto Orozco Téllez, �
 | Conservar la primera captura cuando el valor se repite | Conservar la última | La procedencia de cada fila no cambia en cada corrida y los archivos de plata solo cambian cuando cambian los datos |
 
 ## 3. Problemas encontrados
-- **Los datos de la estructura consultada terminan en julio de 2025.** Se detectó al revisar el periodo disponible que declara la fuente. No se resolvió en esta etapa; queda como primera limitación en la ficha.
+- **Los datos de la primera estructura consultada terminaban en julio de 2025.** Se detectó al revisar el periodo disponible que declara la fuente. La causa: INEGI actualizó el índice en agosto de 2025 y lo publica en una estructura nueva con otras claves de serie. Se localizó la vigente (datos hasta octubre de 2026), se comprobó que coincide con la anterior en los 68,968 valores comunes y se volvió a correr todo. La etiqueta `e1` conserva la versión con datos a julio de 2025; `e1-final` trae la corregida.
 - **Un componente llegó con otro nombre** ("-- Materiales de construcción") y generaba una quinta categoría. Se detectó al revisar la matriz de correlaciones.
 - **Dos afirmaciones del cuaderno no coincidían con sus propias salidas** (número de celdas faltantes y oleadas de incorporación de ciudades). Se corrigieron contra los datos antes de entregar.
 - **El tipo de cambio solo cubre desde 2017**, por lo que la integración con el índice queda parcial de 2004 a 2016.
-- Los seis defectos están registrados en [calidad/defectos-e1.csv](../calidad/defectos-e1.csv).
+- Los siete defectos están registrados en [calidad/defectos-e1.csv](../calidad/defectos-e1.csv).
 
 ## 4. Qué no se hizo
 - La entrevista con un cliente, pendiente desde E0.
@@ -38,7 +38,8 @@ Periodo: 9 al 13 de noviembre de 2026 · Equipo: Julio Alberto Orozco Téllez, �
 - **Una sola ventana de prueba engaña.** Con los últimos 12 meses, SARIMA quedaba peor que repetir el último valor en Colima y era el mejor en el Nacional. Por eso se agregó la validación con 36 orígenes, que es la que decide.
 - **El suavizamiento simple resultó idéntico al modelo ingenuo** (α ≈ 1). Se reporta tal cual: en esta serie no aporta.
 - **La estacionalidad parecía débil y no lo era del todo.** La STL daba fuerza de 0.2, pero la ACF del rezago 12 (0.39) era mayor que la del rezago 1 y los residuos de tres modelos fallaban justo en los rezagos 12 y 24: el índice da un escalón cada enero.
-- **Ningún modelo dejó residuos de ruido blanco.** Se amplió la búsqueda de SARIMA y no apareció uno que pasara Ljung-Box a 12 y 24 rezagos. Se decidió reportarlo como limitación en lugar de escoger los rezagos que sí pasan.
+- **El modelo elegido no deja residuos de ruido blanco.** Al ampliar la búsqueda de SARIMA a 64 variantes, una sola pasó Ljung-Box a 12 y 24 rezagos. No se eligió: escoger el modelo por ser el único que pasa el diagnóstico es ajustarlo a la prueba. Se reporta la limitación y el candidato.
+- **Las conclusiones cambiaron con más datos.** Con datos a julio de 2025, a 12 meses ningún modelo superaba a la referencia de deriva; con datos a octubre de 2026 gana Holt-Winters. El resultado de corto plazo (SARIMA a 1 y 3 meses) se mantuvo.
 - La primera redacción del cuaderno decía que los residuos fallaban en el primer rezago; al ver las gráficas era en el 12. Se corrigió contra las salidas.
 
 ## 4 ter. Calidad: qué se encontró
@@ -60,4 +61,4 @@ Periodo: 9 al 13 de noviembre de 2026 · Equipo: Julio Alberto Orozco Téllez, �
 3. Leer las salidas antes de escribir las conclusiones.
 
 ## 7. Siguiente etapa
-Entrevistas de validación, estructura vigente del índice, precio base por ciudad para pasar de índice a pesos, tablero con chat de consulta sobre la capa oro.
+Entrevistas de validación, precio base por ciudad para pasar de índice a pesos, tablero con chat de consulta sobre la capa oro.

@@ -38,4 +38,4 @@ La arquitectura medallón, el extractor ético, la bitácora de captura, las pru
 ## 6. Pendientes
 - Entrevistas con albañil, contratista, arquitecto, ferretería y una persona que haya construido su casa.
 - Confirmar con los tres docentes el cambio de tema y la participación de José Rey solo en Calidad.
-- Localizar la estructura vigente del índice (los datos de la estructura consultada terminan en julio de 2025).
+- Resuelto en E1: se localizó la estructura vigente del índice (la primera que se consultó terminaba en julio de 2025).

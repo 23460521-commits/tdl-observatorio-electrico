@@ -1,1511 +1,1511 @@
 {
- "estructura": "1120015000400010",
+ "estructura": "1120019000100010",
  "titulo": "Construcción residencial por ciudad",
- "generado_utc": "2026-11-13T19:28:27+00:00",
+ "generado_utc": "2026-11-13T22:26:16+00:00",
  "series": [
   {
-   "serie": "672776",
+   "serie": "1660002",
    "ciudad_fuente": "Nacional",
    "componente": "general",
    "nombre_fuente": "Nacional",
    "inicio_fuente": "Ene 1973",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672777",
+   "serie": "1660003",
    "ciudad_fuente": "Nacional",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1973",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672778",
+   "serie": "1660004",
    "ciudad_fuente": "Nacional",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672779",
+   "serie": "1660005",
    "ciudad_fuente": "Nacional",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1973",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672780",
+   "serie": "1660006",
    "ciudad_fuente": "Área Metropolitana de la Cd. de México",
    "componente": "general",
    "nombre_fuente": "Área Metropolitana de la Cd. de México",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672781",
+   "serie": "1660007",
    "ciudad_fuente": "Área Metropolitana de la Cd. de México",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672782",
+   "serie": "1660008",
    "ciudad_fuente": "Área Metropolitana de la Cd. de México",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672783",
+   "serie": "1660009",
    "ciudad_fuente": "Área Metropolitana de la Cd. de México",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672784",
+   "serie": "1660010",
    "ciudad_fuente": "Mérida, Yuc.",
    "componente": "general",
    "nombre_fuente": "Mérida, Yuc.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672785",
+   "serie": "1660011",
    "ciudad_fuente": "Mérida, Yuc.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672786",
+   "serie": "1660012",
    "ciudad_fuente": "Mérida, Yuc.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672787",
+   "serie": "1660013",
    "ciudad_fuente": "Mérida, Yuc.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672788",
+   "serie": "1660014",
    "ciudad_fuente": "Morelia, Mich.",
    "componente": "general",
    "nombre_fuente": "Morelia, Mich.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672789",
+   "serie": "1660015",
    "ciudad_fuente": "Morelia, Mich.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672790",
+   "serie": "1660016",
    "ciudad_fuente": "Morelia, Mich.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672791",
+   "serie": "1660017",
    "ciudad_fuente": "Morelia, Mich.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672792",
+   "serie": "1660018",
    "ciudad_fuente": "Guadalajara, Jal.",
    "componente": "general",
    "nombre_fuente": "Guadalajara, Jal.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672793",
+   "serie": "1660019",
    "ciudad_fuente": "Guadalajara, Jal.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672794",
+   "serie": "1660020",
    "ciudad_fuente": "Guadalajara, Jal.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672795",
+   "serie": "1660021",
    "ciudad_fuente": "Guadalajara, Jal.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672796",
+   "serie": "1660022",
    "ciudad_fuente": "Monterrey, N.L.",
    "componente": "general",
    "nombre_fuente": "Monterrey, N.L.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672797",
+   "serie": "1660023",
    "ciudad_fuente": "Monterrey, N.L.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672798",
+   "serie": "1660024",
    "ciudad_fuente": "Monterrey, N.L.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672799",
+   "serie": "1660025",
    "ciudad_fuente": "Monterrey, N.L.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672800",
+   "serie": "1660026",
    "ciudad_fuente": "Mexicali, B. C.",
    "componente": "general",
    "nombre_fuente": "Mexicali, B. C.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672801",
+   "serie": "1660027",
    "ciudad_fuente": "Mexicali, B. C.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672802",
+   "serie": "1660028",
    "ciudad_fuente": "Mexicali, B. C.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672803",
+   "serie": "1660029",
    "ciudad_fuente": "Mexicali, B. C.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672804",
+   "serie": "1660030",
    "ciudad_fuente": "Juárez, Chih.",
    "componente": "general",
    "nombre_fuente": "Juárez, Chih.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672805",
+   "serie": "1660031",
    "ciudad_fuente": "Juárez, Chih.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672806",
+   "serie": "1660032",
    "ciudad_fuente": "Juárez, Chih.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672807",
+   "serie": "1660033",
    "ciudad_fuente": "Juárez, Chih.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672808",
+   "serie": "1660034",
    "ciudad_fuente": "Acapulco, Gro.",
    "componente": "general",
    "nombre_fuente": "Acapulco, Gro.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672809",
+   "serie": "1660035",
    "ciudad_fuente": "Acapulco, Gro.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672810",
+   "serie": "1660036",
    "ciudad_fuente": "Acapulco, Gro.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672811",
+   "serie": "1660037",
    "ciudad_fuente": "Acapulco, Gro.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672812",
+   "serie": "1660038",
    "ciudad_fuente": "Culiacán, Sin.",
    "componente": "general",
    "nombre_fuente": "Culiacán, Sin.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672813",
+   "serie": "1660039",
    "ciudad_fuente": "Culiacán, Sin.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672814",
+   "serie": "1660040",
    "ciudad_fuente": "Culiacán, Sin.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672815",
+   "serie": "1660041",
    "ciudad_fuente": "Culiacán, Sin.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672816",
+   "serie": "1660042",
    "ciudad_fuente": "León, Gto.",
    "componente": "general",
    "nombre_fuente": "León, Gto.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672817",
+   "serie": "1660043",
    "ciudad_fuente": "León, Gto.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672818",
+   "serie": "1660044",
    "ciudad_fuente": "León, Gto.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672819",
+   "serie": "1660045",
    "ciudad_fuente": "León, Gto.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672820",
+   "serie": "1660046",
    "ciudad_fuente": "Puebla, Pue.",
    "componente": "general",
    "nombre_fuente": "Puebla, Pue.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672821",
+   "serie": "1660047",
    "ciudad_fuente": "Puebla, Pue.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672822",
+   "serie": "1660048",
    "ciudad_fuente": "Puebla, Pue.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672823",
+   "serie": "1660049",
    "ciudad_fuente": "Puebla, Pue.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672824",
+   "serie": "1660050",
    "ciudad_fuente": "San Luis Potosí, S.L.P.",
    "componente": "general",
    "nombre_fuente": "San Luis Potosí, S.L.P.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672825",
+   "serie": "1660051",
    "ciudad_fuente": "San Luis Potosí, S.L.P.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672826",
+   "serie": "1660052",
    "ciudad_fuente": "San Luis Potosí, S.L.P.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672827",
+   "serie": "1660053",
    "ciudad_fuente": "San Luis Potosí, S.L.P.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672828",
+   "serie": "1660054",
    "ciudad_fuente": "Tapachula, Chis.",
    "componente": "general",
    "nombre_fuente": "Tapachula, Chis.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672829",
+   "serie": "1660055",
    "ciudad_fuente": "Tapachula, Chis.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672830",
+   "serie": "1660056",
    "ciudad_fuente": "Tapachula, Chis.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672831",
+   "serie": "1660057",
    "ciudad_fuente": "Tapachula, Chis.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672832",
+   "serie": "1660058",
    "ciudad_fuente": "Toluca, Edo. de Méx.",
    "componente": "general",
    "nombre_fuente": "Toluca, Edo. de Méx.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672833",
+   "serie": "1660059",
    "ciudad_fuente": "Toluca, Edo. de Méx.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672834",
+   "serie": "1660060",
    "ciudad_fuente": "Toluca, Edo. de Méx.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672835",
+   "serie": "1660061",
    "ciudad_fuente": "Toluca, Edo. de Méx.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672836",
+   "serie": "1660062",
    "ciudad_fuente": "Torreón, Coah.",
    "componente": "general",
    "nombre_fuente": "Torreón, Coah.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672837",
+   "serie": "1660063",
    "ciudad_fuente": "Torreón, Coah.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672838",
+   "serie": "1660064",
    "ciudad_fuente": "Torreón, Coah.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672839",
+   "serie": "1660065",
    "ciudad_fuente": "Torreón, Coah.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672840",
+   "serie": "1660066",
    "ciudad_fuente": "Veracruz, Ver.",
    "componente": "general",
    "nombre_fuente": "Veracruz, Ver.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672841",
+   "serie": "1660067",
    "ciudad_fuente": "Veracruz, Ver.",
    "componente": "materiales",
    "nombre_fuente": "-- Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672842",
+   "serie": "1660068",
    "ciudad_fuente": "Veracruz, Ver.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672843",
+   "serie": "1660069",
    "ciudad_fuente": "Veracruz, Ver.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672844",
+   "serie": "1660070",
    "ciudad_fuente": "Villahermosa,Tab.",
    "componente": "general",
    "nombre_fuente": "Villahermosa,Tab.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672845",
+   "serie": "1660071",
    "ciudad_fuente": "Villahermosa,Tab.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672846",
+   "serie": "1660072",
    "ciudad_fuente": "Villahermosa,Tab.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672847",
+   "serie": "1660073",
    "ciudad_fuente": "Villahermosa,Tab.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672848",
+   "serie": "1660074",
    "ciudad_fuente": "Tampico, Tamps.",
    "componente": "general",
    "nombre_fuente": "Tampico, Tamps.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672849",
+   "serie": "1660075",
    "ciudad_fuente": "Tampico, Tamps.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672850",
+   "serie": "1660076",
    "ciudad_fuente": "Tampico, Tamps.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672851",
+   "serie": "1660077",
    "ciudad_fuente": "Tampico, Tamps.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672852",
+   "serie": "1660078",
    "ciudad_fuente": "Chihuahua, Chih.",
    "componente": "general",
    "nombre_fuente": "Chihuahua, Chih.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672853",
+   "serie": "1660079",
    "ciudad_fuente": "Chihuahua, Chih.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672854",
+   "serie": "1660080",
    "ciudad_fuente": "Chihuahua, Chih.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672855",
+   "serie": "1660081",
    "ciudad_fuente": "Chihuahua, Chih.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672856",
+   "serie": "1660082",
    "ciudad_fuente": "Hermosillo, Son.",
    "componente": "general",
    "nombre_fuente": "Hermosillo, Son.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672857",
+   "serie": "1660083",
    "ciudad_fuente": "Hermosillo, Son.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672858",
+   "serie": "1660084",
    "ciudad_fuente": "Hermosillo, Son.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672859",
+   "serie": "1660085",
    "ciudad_fuente": "Hermosillo, Son.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672860",
+   "serie": "1660086",
    "ciudad_fuente": "Monclova, Coah.",
    "componente": "general",
    "nombre_fuente": "Monclova, Coah.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672861",
+   "serie": "1660087",
    "ciudad_fuente": "Monclova, Coah.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672862",
+   "serie": "1660088",
    "ciudad_fuente": "Monclova, Coah.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672863",
+   "serie": "1660089",
    "ciudad_fuente": "Monclova, Coah.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672864",
+   "serie": "1660090",
    "ciudad_fuente": "Córdoba, Ver.",
    "componente": "general",
    "nombre_fuente": "Córdoba, Ver.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672865",
+   "serie": "1660091",
    "ciudad_fuente": "Córdoba, Ver.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672866",
+   "serie": "1660092",
    "ciudad_fuente": "Córdoba, Ver.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672867",
+   "serie": "1660093",
    "ciudad_fuente": "Córdoba, Ver.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672868",
+   "serie": "1660094",
    "ciudad_fuente": "Aguascalientes, Ags.",
    "componente": "general",
    "nombre_fuente": "Aguascalientes, Ags.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672869",
+   "serie": "1660095",
    "ciudad_fuente": "Aguascalientes, Ags.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672870",
+   "serie": "1660096",
    "ciudad_fuente": "Aguascalientes, Ags.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672871",
+   "serie": "1660097",
    "ciudad_fuente": "Aguascalientes, Ags.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672872",
+   "serie": "1660098",
    "ciudad_fuente": "Tijuana, B. C.",
    "componente": "general",
    "nombre_fuente": "Tijuana, B. C.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672873",
+   "serie": "1660099",
    "ciudad_fuente": "Tijuana, B. C.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672874",
+   "serie": "1660100",
    "ciudad_fuente": "Tijuana, B. C.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672875",
+   "serie": "1660101",
    "ciudad_fuente": "Tijuana, B. C.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672876",
+   "serie": "1660102",
    "ciudad_fuente": "Matamoros, Tamps.",
    "componente": "general",
    "nombre_fuente": "Matamoros, Tamps.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672877",
+   "serie": "1660103",
    "ciudad_fuente": "Matamoros, Tamps.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672878",
+   "serie": "1660104",
    "ciudad_fuente": "Matamoros, Tamps.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672879",
+   "serie": "1660105",
    "ciudad_fuente": "Matamoros, Tamps.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672880",
+   "serie": "1660106",
    "ciudad_fuente": "Colima, Col.",
    "componente": "general",
    "nombre_fuente": "Colima, Col.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672881",
+   "serie": "1660107",
    "ciudad_fuente": "Colima, Col.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672882",
+   "serie": "1660108",
    "ciudad_fuente": "Colima, Col.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672883",
+   "serie": "1660109",
    "ciudad_fuente": "Colima, Col.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672884",
+   "serie": "1660110",
    "ciudad_fuente": "La Paz, B. C. S.",
    "componente": "general",
    "nombre_fuente": "La Paz, B. C. S.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672885",
+   "serie": "1660111",
    "ciudad_fuente": "La Paz, B. C. S.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672886",
+   "serie": "1660112",
    "ciudad_fuente": "La Paz, B. C. S.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672887",
+   "serie": "1660113",
    "ciudad_fuente": "La Paz, B. C. S.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672888",
+   "serie": "1660114",
    "ciudad_fuente": "Chetumal, Q. R.",
    "componente": "general",
    "nombre_fuente": "Chetumal, Q. R.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672889",
+   "serie": "1660115",
    "ciudad_fuente": "Chetumal, Q. R.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672890",
+   "serie": "1660116",
    "ciudad_fuente": "Chetumal, Q. R.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672891",
+   "serie": "1660117",
    "ciudad_fuente": "Chetumal, Q. R.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672892",
+   "serie": "1660118",
    "ciudad_fuente": "Jacona, Mich.",
    "componente": "general",
    "nombre_fuente": "Jacona, Mich.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672893",
+   "serie": "1660119",
    "ciudad_fuente": "Jacona, Mich.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672894",
+   "serie": "1660120",
    "ciudad_fuente": "Jacona, Mich.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672895",
+   "serie": "1660121",
    "ciudad_fuente": "Jacona, Mich.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672896",
+   "serie": "1660122",
    "ciudad_fuente": "Fresnillo, Zac.",
    "componente": "general",
    "nombre_fuente": "Fresnillo, Zac.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672897",
+   "serie": "1660123",
    "ciudad_fuente": "Fresnillo, Zac.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672898",
+   "serie": "1660124",
    "ciudad_fuente": "Fresnillo, Zac.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672899",
+   "serie": "1660125",
    "ciudad_fuente": "Fresnillo, Zac.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672900",
+   "serie": "1660126",
    "ciudad_fuente": "Iguala, Gro.",
    "componente": "general",
    "nombre_fuente": "Iguala, Gro.",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672901",
+   "serie": "1660127",
    "ciudad_fuente": "Iguala, Gro.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672902",
+   "serie": "1660128",
    "ciudad_fuente": "Iguala, Gro.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672903",
+   "serie": "1660129",
    "ciudad_fuente": "Iguala, Gro.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Ene 1981",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672904",
+   "serie": "1660130",
    "ciudad_fuente": "Huatabampo, Son.",
    "componente": "general",
    "nombre_fuente": "Huatabampo, Son.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672905",
+   "serie": "1660131",
    "ciudad_fuente": "Huatabampo, Son.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672906",
+   "serie": "1660132",
    "ciudad_fuente": "Huatabampo, Son.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672907",
+   "serie": "1660133",
    "ciudad_fuente": "Huatabampo, Son.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672908",
+   "serie": "1660134",
    "ciudad_fuente": "Tulancingo, Hgo.",
    "componente": "general",
    "nombre_fuente": "Tulancingo, Hgo.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672909",
+   "serie": "1660135",
    "ciudad_fuente": "Tulancingo, Hgo.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672910",
+   "serie": "1660136",
    "ciudad_fuente": "Tulancingo, Hgo.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672911",
+   "serie": "1660137",
    "ciudad_fuente": "Tulancingo, Hgo.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672912",
+   "serie": "1660138",
    "ciudad_fuente": "Cortazar, Gto.",
    "componente": "general",
    "nombre_fuente": "Cortazar, Gto.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672913",
+   "serie": "1660139",
    "ciudad_fuente": "Cortazar, Gto.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672914",
+   "serie": "1660140",
    "ciudad_fuente": "Cortazar, Gto.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672915",
+   "serie": "1660141",
    "ciudad_fuente": "Cortazar, Gto.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672916",
+   "serie": "1660142",
    "ciudad_fuente": "Cd. Jiménez Chih.",
    "componente": "general",
    "nombre_fuente": "Cd. Jiménez Chih.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672917",
+   "serie": "1660143",
    "ciudad_fuente": "Cd. Jiménez Chih.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672918",
+   "serie": "1660144",
    "ciudad_fuente": "Cd. Jiménez Chih.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672919",
+   "serie": "1660145",
    "ciudad_fuente": "Cd. Jiménez Chih.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672920",
+   "serie": "1660146",
    "ciudad_fuente": "Durango, Dgo.",
    "componente": "general",
    "nombre_fuente": "Durango, Dgo.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672921",
+   "serie": "1660147",
    "ciudad_fuente": "Durango, Dgo.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672922",
+   "serie": "1660148",
    "ciudad_fuente": "Durango, Dgo.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672923",
+   "serie": "1660149",
    "ciudad_fuente": "Durango, Dgo.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672924",
+   "serie": "1660150",
    "ciudad_fuente": "Tepic, Nay.",
    "componente": "general",
    "nombre_fuente": "Tepic, Nay.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672925",
+   "serie": "1660151",
    "ciudad_fuente": "Tepic, Nay.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672926",
+   "serie": "1660152",
    "ciudad_fuente": "Tepic, Nay.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672927",
+   "serie": "1660153",
    "ciudad_fuente": "Tepic, Nay.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672928",
+   "serie": "1660154",
    "ciudad_fuente": "Oaxaca, Oax.",
    "componente": "general",
    "nombre_fuente": "Oaxaca, Oax.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672929",
+   "serie": "1660155",
    "ciudad_fuente": "Oaxaca, Oax.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672930",
+   "serie": "1660156",
    "ciudad_fuente": "Oaxaca, Oax.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672931",
+   "serie": "1660157",
    "ciudad_fuente": "Oaxaca, Oax.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672932",
+   "serie": "1660158",
    "ciudad_fuente": "Querétaro, Qro.",
    "componente": "general",
    "nombre_fuente": "Querétaro, Qro.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672933",
+   "serie": "1660159",
    "ciudad_fuente": "Querétaro, Qro.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672934",
+   "serie": "1660160",
    "ciudad_fuente": "Querétaro, Qro.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672935",
+   "serie": "1660161",
    "ciudad_fuente": "Querétaro, Qro.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672936",
+   "serie": "1660162",
    "ciudad_fuente": "Cuernavaca, Mor.",
    "componente": "general",
    "nombre_fuente": "Cuernavaca, Mor.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672937",
+   "serie": "1660163",
    "ciudad_fuente": "Cuernavaca, Mor.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672938",
+   "serie": "1660164",
    "ciudad_fuente": "Cuernavaca, Mor.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672939",
+   "serie": "1660165",
    "ciudad_fuente": "Cuernavaca, Mor.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672940",
+   "serie": "1660166",
    "ciudad_fuente": "Tlaxcala, Tlax.",
    "componente": "general",
    "nombre_fuente": "Tlaxcala, Tlax.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672941",
+   "serie": "1660167",
    "ciudad_fuente": "Tlaxcala, Tlax.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672942",
+   "serie": "1660168",
    "ciudad_fuente": "Tlaxcala, Tlax.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672943",
+   "serie": "1660169",
    "ciudad_fuente": "Tlaxcala, Tlax.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672944",
+   "serie": "1660170",
    "ciudad_fuente": "San Andrés Tuxtla, Ver.",
    "componente": "general",
    "nombre_fuente": "San Andrés Tuxtla, Ver.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672945",
+   "serie": "1660171",
    "ciudad_fuente": "San Andrés Tuxtla, Ver.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672946",
+   "serie": "1660172",
    "ciudad_fuente": "San Andrés Tuxtla, Ver.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672947",
+   "serie": "1660173",
    "ciudad_fuente": "San Andrés Tuxtla, Ver.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672948",
+   "serie": "1660174",
    "ciudad_fuente": "Campeche, Camp.",
    "componente": "general",
    "nombre_fuente": "Campeche, Camp.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672949",
+   "serie": "1660175",
    "ciudad_fuente": "Campeche, Camp.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672950",
+   "serie": "1660176",
    "ciudad_fuente": "Campeche, Camp.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672951",
+   "serie": "1660177",
    "ciudad_fuente": "Campeche, Camp.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672952",
+   "serie": "1660178",
    "ciudad_fuente": "Tepatitlán, Jal.",
    "componente": "general",
    "nombre_fuente": "Tepatitlán, Jal.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672953",
+   "serie": "1660179",
    "ciudad_fuente": "Tepatitlán, Jal.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672954",
+   "serie": "1660180",
    "ciudad_fuente": "Tepatitlán, Jal.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672955",
+   "serie": "1660181",
    "ciudad_fuente": "Tepatitlán, Jal.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672956",
+   "serie": "1660182",
    "ciudad_fuente": "Tehuantepec, Oax.",
    "componente": "general",
    "nombre_fuente": "Tehuantepec, Oax.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672957",
+   "serie": "1660183",
    "ciudad_fuente": "Tehuantepec, Oax.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672958",
+   "serie": "1660184",
    "ciudad_fuente": "Tehuantepec, Oax.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672959",
+   "serie": "1660185",
    "ciudad_fuente": "Tehuantepec, Oax.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672960",
+   "serie": "1660186",
    "ciudad_fuente": "Cd. Acuña, Coah.",
    "componente": "general",
    "nombre_fuente": "Cd. Acuña, Coah.",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672961",
+   "serie": "1660187",
    "ciudad_fuente": "Cd. Acuña, Coah.",
    "componente": "materiales",
    "nombre_fuente": "Materiales de construcción",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672962",
+   "serie": "1660188",
    "ciudad_fuente": "Cd. Acuña, Coah.",
    "componente": "maquinaria",
    "nombre_fuente": "Alquiler de maquinaria",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   },
   {
-   "serie": "672963",
+   "serie": "1660189",
    "ciudad_fuente": "Cd. Acuña, Coah.",
    "componente": "mano_obra",
    "nombre_fuente": "Mano de obra",
    "inicio_fuente": "Dic 2003",
-   "fin_fuente": "Jul 2025"
+   "fin_fuente": "Oct 2026"
   }
  ]
 }

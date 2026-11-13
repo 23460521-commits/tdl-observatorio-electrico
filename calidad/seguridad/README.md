@@ -6,7 +6,7 @@ Revisión del 13 de noviembre de 2026 sobre el commit de la entrega. Los reporte
 
 | Revisión | Herramienta | Alcance | Resultado | Evidencia |
 |---|---|---|---|---|
-| Secretos en el historial | gitleaks 8.24.3 (`gitleaks git`) | Los 12 commits del repositorio, 27 MB | **0 hallazgos** | [gitleaks-historial.json](gitleaks-historial.json) |
+| Secretos en el historial | gitleaks 8.24.3 (`gitleaks git`) | Los 13 commits del repositorio al momento de la revisión | **0 hallazgos** | [gitleaks-historial.json](gitleaks-historial.json) |
 | Secretos en los archivos actuales | gitleaks 8.24.3 (`gitleaks dir`) | Todo el árbol de trabajo, incluidos los datos de bronce | **0 hallazgos** | [gitleaks-archivos.json](gitleaks-archivos.json) |
 | Dependencias vulnerables | pip-audit 2.10.1 | `requirements.txt` y sus dependencias transitivas (29 paquetes) | **0 vulnerabilidades conocidas** | [pip-audit.json](pip-audit.json) |
 | Token en la capa bronce | Búsqueda manual (`grep -rli token data/bronce`) | Archivos `.meta.json` | **Sin coincidencias**: la URL guardada no lleva el token (viaja en un encabezado) | |

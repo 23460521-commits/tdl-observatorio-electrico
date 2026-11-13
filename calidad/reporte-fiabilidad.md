@@ -29,7 +29,7 @@ Periodo observado: 2026-11-09 a 2026-11-13 (5 días, 5 ejecuciones del flujo dia
 
 ## Pipeline plata y oro
 
-Corridas registradas: 1; exitosas: 1. Duración media: 5.3 s. Última corrida: 68968 registros de INEGI a plata y 24604 a cuarentena.
+Corridas registradas: 2; exitosas: 2. Duración media: 5.6 s. Última corrida: 71788 registros de INEGI a plata y 24604 a cuarentena.
 
 ## Lectura
 

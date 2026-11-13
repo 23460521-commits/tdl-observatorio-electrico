@@ -377,3 +377,14 @@ def test_inegi_parametros_y_grupos():
     assert p["_series"] == "e|11,12," and p["_anioI"] == "2025" and p["INPtipoExporta"] == "CSV"
     bloques = inegi.grupos([{"serie": str(i)} for i in range(100)], tam=48)
     assert [len(b) for b in bloques] == [48, 48, 4]
+
+
+def test_capturas_de_una_estructura_anterior_no_se_leen_pero_se_cuentan(bronce_tmp):
+    antes = len(plata.leer_inegi(bronce_tmp, estructura="NUEVA"))
+    escribir(bronce_tmp, "inegi_inpp", "historico", "vieja", csv_inegi({"9001": lambda n: "50.0"}),
+             "csv", "2026-10-01T00:00:00+00:00")  # fmt: skip
+    meta = bronce_tmp / "inegi_inpp" / "historico" / "vieja.meta.json"
+    meta.write_text(json.dumps({"capturado_utc": "x", "estructura": "VIEJA"}), encoding="utf-8")
+    crudo = plata.leer_inegi(bronce_tmp, estructura="NUEVA")
+    assert len(crudo) == antes and "9001" not in set(crudo["serie"])
+    assert crudo.attrs["ignorados"] == {"VIEJA": 1}

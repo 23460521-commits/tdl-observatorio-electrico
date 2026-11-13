@@ -5,3 +5,4 @@ numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_ori
 4,2026-11-13,entorno,codificacion,prueba,3,,El reporte usaba rutas relativas al repositorio y fallaba al escribir en otra carpeta (pruebas con tmp_path).
 5,2026-11-13,documentacion,documentacion,revision,10,,El cuaderno afirmaba que las celdas faltantes coincidian con los N/E y que las ciudades entraron en oleadas de 12/24/11; los datos dicen 24604 N/E de 49660 celdas y oleadas de 1/23/23. Se corrigio el texto contra las salidas.
 6,2026-11-13,estilo,codificacion,compilacion,3,,18 lineas de mas de 100 caracteres detectadas por ruff.
+7,2026-11-13,datos,requerimientos,revision,60,,Se consulto una estructura del indice de INEGI congelada en julio de 2025 (la fuente publica desde agosto de 2025 en otra estructura con claves nuevas). Se localizo la vigente; se verifico igualdad en 68968 valores comunes; el pipeline ahora filtra por estructura y lo reporta.

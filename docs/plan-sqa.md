@@ -61,15 +61,15 @@ Regla: toda cifra escrita en un documento debe poder regenerarse con un comando 
 | Disponibilidad de la captura | `python calidad/fiabilidad.py` | ≥ 95 % | 100 % (5 de 5 días) |
 | MTTR | Igual | ≤ 24 h | Sin fallas registradas |
 | MTBF | Igual | Se reporta; sin objetivo aún | No estimable (0 fallas en 86 h) |
-| Registros aceptados por la puerta | `calidad/reporte-puerta.json` | Se reporta por fuente | INEGI 73.71 %, Banxico 98.88 % |
+| Registros aceptados por la puerta | `calidad/reporte-puerta.json` | Se reporta por fuente | INEGI 74.48 %, Banxico 98.88 % |
 | Registros perdidos sin motivo | Balance bronce = plata + cuarentena + duplicados | 0 | 0 |
 | Huecos dentro de las series | Revisión `continuidad_mensual` | 0 | 0 |
-| Pruebas automáticas que pasan | `pytest` | 100 % | 59 de 59 |
+| Pruebas automáticas que pasan | `pytest` | 100 % | 60 de 60 |
 | Errores de estilo | `ruff check .` | 0 | 0 |
 | Secretos expuestos | gitleaks | 0 | 0 |
 | Dependencias vulnerables | pip-audit | 0 | 0 |
-| Defectos registrados y cerrados | `calidad/defectos-e1.csv` | 100 % cerrados antes de etiquetar | 6 de 6 |
-| Error del pronóstico a 1 mes (MAPE) | `docs/E1/pronostico.ipynb` | Se reporta; objetivo por fijar con el cliente | 0.72 % (Colima, SARIMA) |
+| Defectos registrados y cerrados | `calidad/defectos-e1.csv` | 100 % cerrados antes de etiquetar | 7 de 7 |
+| Error del pronóstico a 1 mes (MAPE) | `docs/E1/pronostico.ipynb` | Se reporta; objetivo por fijar con el cliente | 0.47 % (Colima, SARIMA) |
 
 El porcentaje aceptado de INEGI es bajo por una razón conocida: los rechazados son celdas `N/E` de periodos en que la serie no existía, no errores.
 
@@ -93,7 +93,7 @@ El porcentaje aceptado de INEGI es bajo por una razón conocida: los rechazados 
 ## 7. Pruebas
 | Nivel | Qué cubre | Dónde | Cantidad en E1 |
 |---|---|---|---|
-| Unitarias | Extractores, limpieza de formato, funciones estadísticas, modelos de pronóstico | `tests/` | 59 |
+| Unitarias | Extractores, limpieza de formato, funciones estadísticas, modelos de pronóstico | `tests/` | 60 |
 | Integración | Pipeline de punta a punta con bronce sintético | `test_pipeline_completo_escribe_plata_oro_y_cuarentena` | 1 |
 | Datos (contrato) | Esquemas Pandera y revisiones de conjunto sobre los datos reales | `pipeline/puerta.py` | 2 esquemas, 6 revisiones |
 | Sistema | Pipeline completo contra los datos del repositorio en GitHub Actions | `.github/workflows/ci.yml` | En cada cambio |
@@ -108,7 +108,7 @@ Las pruebas no usan internet: las respuestas de las fuentes se simulan. No se mi
 4. Un registro inválido en los datos no es un defecto del código: va a cuarentena con su motivo. Si el motivo se repite, se abre un defecto para revisar la regla o el extractor.
 5. Una falla de la captura programada deja la ejecución en rojo en GitHub Actions y una fila `fallo` en la bitácora; el administrador la atiende en menos de 24 h.
 
-Defectos de E1: 6 registrados, 6 corregidos (1 de datos, 2 de función, 1 de entorno, 1 de documentación, 1 de estilo).
+Defectos de E1: 7 registrados, 7 corregidos (2 de datos, 2 de función, 1 de entorno, 1 de documentación, 1 de estilo).
 
 ## 9. Herramientas, técnicas y metodologías
 | Herramienta | Uso |
@@ -145,7 +145,7 @@ José Rey no cursa Ingeniería de Datos ni Análisis Estadístico: Julio y Ánge
 ## 14. Gestión de riesgos
 | Riesgo | Probabilidad | Impacto | Mitigación |
 |---|---|---|---|
-| La estructura del índice consultada dejó de actualizarse en julio de 2025 | Ya ocurrió | Alto | Localizar la estructura vigente y encadenarla (primer pendiente de E2) |
+| INEGI vuelve a cambiar la estructura del índice (ya ocurrió en agosto de 2025; resuelto en E1) | Media | Alto | Revisar la oportunidad del dato en cada corrida; el identificador vigente está en un solo lugar (`extractores/config.py`) |
 | Los docentes no aprueban el cambio de tema | Media | Alto | Confirmación solicitada; la arquitectura sirve para cualquier fuente |
 | Dependencia de una sola persona y de IA para construir | Alta | Medio | Revisión de entrega obligatoria, sesión de explicación al equipo |
 | No conseguir entrevistas con usuarios | Media | Alto | Empezar por contactos de la familia y del equipo |

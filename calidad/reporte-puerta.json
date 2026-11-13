@@ -1,11 +1,11 @@
 {
   "estado": "exito",
   "inegi_inpp": {
-    "registros_bronce": 93572,
-    "registros_plata": 68968,
+    "registros_bronce": 96392,
+    "registros_plata": 71788,
     "registros_cuarentena": 24604,
     "duplicados_identicos_colapsados": 0,
-    "pct_aceptado": 73.71,
+    "pct_aceptado": 74.48,
     "cuarentena_por_motivo": [
       {
         "etapa": "formato",
@@ -24,13 +24,19 @@
   },
   "cobertura": {
     "inpp_desde": "1973-01-01",
-    "inpp_hasta": "2025-07-01",
+    "inpp_hasta": "2026-10-01",
     "ciudades": 47,
     "series": 188,
     "fix_desde": "2017-01-02",
     "fix_hasta": "2026-11-12",
     "oro_desde": "2004-01-01",
-    "oro_filas": 48692
+    "oro_filas": 51512
+  },
+  "estructura_inegi": {
+    "vigente": "1120019000100010",
+    "archivos_de_estructuras_anteriores_no_leidos": {
+      "1120015000400010": 4
+    }
   },
   "revisiones_de_conjunto": [
     {
@@ -67,14 +73,14 @@
       "revision": "tablas_no_vacias",
       "ok": true,
       "grave": true,
-      "detalle": "inpp=68968 filas, fix=2481 filas"
+      "detalle": "inpp=71788 filas, fix=2481 filas"
     }
   ],
   "salidas": [
     {
       "archivo": "data/plata/inpp_construccion.csv",
-      "filas": 68968,
-      "sha256": "b1c7262f12bf1b01d1976a8916ba802d79cd739d66e68b71f04d6394e37f5767"
+      "filas": 71788,
+      "sha256": "bef3f605b78f0a83cb837e1fe5415d1d9ac0e46e7cbde01d5bab68a2b54ec095"
     },
     {
       "archivo": "data/plata/fix_diario.csv",
@@ -84,7 +90,7 @@
     {
       "archivo": "data/cuarentena/inegi_inpp.csv",
       "filas": 24604,
-      "sha256": "03fb35498e4426a99a1354292efcdcbe1759871f01231b370e04e4306713594e"
+      "sha256": "653351bfa6dc59fd11bb7196b935b6d5994eb247922d91bc7680aa9f99eeb11c"
     },
     {
       "archivo": "data/cuarentena/banxico_sie.csv",
@@ -93,23 +99,23 @@
     },
     {
       "archivo": "data/oro/obraprecio_panel_mensual.csv",
-      "filas": 48692,
-      "sha256": "eb72c43ad513bff94b398f9fe626576eaf982bd37d8ab5cd3e3396aa5b0b5b66"
+      "filas": 51512,
+      "sha256": "eed7b3de7b4d6a01cc7f45c2608c4a2bb482158c8ad7a0873fd7caa564fcff5b"
     },
     {
       "archivo": "data/oro/obraprecio_ciudad_mensual.csv",
-      "filas": 12173,
-      "sha256": "1ebc28402231526fd106735855c4ddb713ba640028de053b17059afb2f1376f9"
+      "filas": 12878,
+      "sha256": "02cf9fab856e575a5526cd8d17855b8783807627c6e7fc8e7bda8753cf002d92"
     },
     {
       "archivo": "data/oro/resumen_region_anual.csv",
-      "filas": 352,
-      "sha256": "f062ffe2617652b1a9e51ba046ce4a5c871da80fc3ac0412d2a53ecb86d41e65"
+      "filas": 368,
+      "sha256": "91382544059d4838417a121636205a32350d4ca3373cfd6d545e0f4b7285c824"
     },
     {
       "archivo": "data/oro/ranking_ciudades.csv",
       "filas": 46,
-      "sha256": "4f4f58901692b8e54d7ef30621b63f02d8bbabe23293d6d5c85b446f72efa2b2"
+      "sha256": "3b48abfe655768483e2279fe570345f36f4612758d39aa458711c6a2476017e2"
     }
   ]
 }

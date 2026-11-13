@@ -51,12 +51,22 @@ def _rel(ruta, base):
 
 
 # --- INEGI ----------------------------------------------------------------------
-def leer_inegi(dir_bronce=None):
-    """Lee todos los CSV de INEGI en bronce y los pasa de ancho a largo, sin limpiar."""
+def leer_inegi(dir_bronce=None, estructura=None):
+    """Lee los CSV de INEGI en bronce y los pasa de ancho a largo, sin limpiar.
+
+    Solo se leen las capturas de la estructura vigente del indice. Las de una estructura
+    anterior se quedan en bronce (no se borran) y se cuentan en `attrs["ignorados"]`
+    para que el reporte lo diga: no son registros invalidos, son otra version del indice.
+    """
     base = (dir_bronce or config.DIR_BRONCE) / "inegi_inpp"
-    filas = []
+    estructura = estructura or config.INEGI_ESTRUCTURA
+    filas, ignorados = [], {}
     for ruta in sorted(base.rglob("*.csv.gz")):
         meta = _meta(ruta)
+        origen = meta.get("estructura", estructura)
+        if origen != estructura:
+            ignorados[origen] = ignorados.get(origen, 0) + 1
+            continue
         texto = gzip.open(ruta).read().decode(meta.get("codificacion", "cp1252"))
         tabla = list(csv.reader(io.StringIO(texto)))
         inicio = next((i for i, f in enumerate(tabla) if f and f[0] == "Fecha"), None)
@@ -68,17 +78,14 @@ def leer_inegi(dir_bronce=None):
                 continue
             for clave, valor in zip(claves, f[1:], strict=False):
                 filas.append(
-                    (
-                        clave,
-                        f[0].strip(),
-                        valor.strip(),
-                        _rel(ruta, base),
-                        meta.get("capturado_utc", ""),
-                    )
-                )
-    return pd.DataFrame(
+                    (clave, f[0].strip(), valor.strip(), _rel(ruta, base),
+                     meta.get("capturado_utc", ""))
+                )  # fmt: skip
+    d = pd.DataFrame(
         filas, columns=["serie", "periodo", "valor", "archivo_bronce", "capturado_utc"]
     )
+    d.attrs["ignorados"] = ignorados
+    return d
 
 
 def _fecha_inegi(periodo):
