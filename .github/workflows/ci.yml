@@ -37,3 +37,28 @@ jobs:
 
       - name: Pipeline completo con puerta de calidad
         run: python -m pipeline.ejecutar
+
+  seguridad:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GITLEAKS_VERSION: "8.24.3"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0   # gitleaks revisa todo el historial, no solo el ultimo commit
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Dependencias con vulnerabilidades conocidas (pip-audit)
+        run: |
+          pip install pip-audit
+          pip-audit -r requirements.txt
+
+      - name: Secretos en el historial (gitleaks)
+        run: |
+          curl -sSL -o gitleaks.tgz "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          mkdir -p "$RUNNER_TEMP/gitleaks" && tar -xzf gitleaks.tgz -C "$RUNNER_TEMP/gitleaks" && rm gitleaks.tgz
+          "$RUNNER_TEMP/gitleaks/gitleaks" git . --no-banner --redact

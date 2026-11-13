@@ -1,6 +1,6 @@
 # Entrega E1 · ObraPrecio (TRUSTED DATA LAB)
 
-Equipo: Julio Alberto Orozco Téllez · Ángel Salvador Álvarez · José Rey Sánchez Navarro (solo Calidad en los Sistemas de Información) · Etiqueta: `e1` · Tablero: pendiente (E2)
+Equipo: Julio Alberto Orozco Téllez · Ángel Salvador Álvarez · José Rey Sánchez Navarro (solo Calidad en los Sistemas de Información) · Etiquetas: `e1` (Ingeniería de Datos) y `e1-final` (las tres materias) · Tablero: pendiente (E2)
 
 ## Resumen en tres líneas
 ObraPrecio responde cuánto ha subido el costo de construir vivienda en 46 ciudades de México y qué lo mueve (materiales, maquinaria o mano de obra), con el índice oficial de INEGI integrado con el tipo de cambio de Banxico.
@@ -10,9 +10,11 @@ El proyecto cambió de tema respecto a E0 (antes Observatorio Eléctrico); el po
 ## Cómo reproducir
 ```bash
 pip install -r requirements-dev.txt
-python -m pytest                 # 45 pruebas, sin internet
+python -m pytest                 # 59 pruebas, sin internet
 python -m pipeline.ejecutar      # bronce -> plata -> oro + cuarentena + reporte
 jupyter nbconvert --to notebook --execute --inplace docs/E1/limpieza.ipynb
+jupyter nbconvert --to notebook --execute --inplace docs/E1/pronostico.ipynb
+python calidad/fiabilidad.py     # recalcula disponibilidad, MTBF y MTTR
 ```
 
 ## Ingeniería de Datos
@@ -39,26 +41,41 @@ jupyter nbconvert --to notebook --execute --inplace docs/E1/limpieza.ipynb
 Cobertura: 188 series (46 ciudades más Nacional × 4 componentes), enero de 1973 a julio de 2025; tipo de cambio de enero de 2017 a noviembre de 2026. Capa oro: 48,692 filas desde enero de 2004.
 
 ## Análisis Estadístico
+Cuaderno: [pronostico.ipynb](pronostico.ipynb) · Código: [laboratorio/modelos.py](../../laboratorio/modelos.py) · Pruebas: [tests/test_laboratorio.py](../../tests/test_laboratorio.py)
+
+Serie: índice general de costo de construcción de Colima, enero de 2004 a julio de 2025 (259 meses), con el índice Nacional como contraste.
+
 | Criterio de la rúbrica | Evidencia | Nota del equipo |
 |---|---|---|
-| Caracterización, estacionariedad, cuatro modelos, métricas y residuos | Pendiente | Se trabaja sobre `data/oro/obraprecio_ciudad_mensual.csv`; se entrega por separado dentro del plazo de la materia |
+| Caracterización de la serie | [pronostico.ipynb §1](pronostico.ipynb) | Tendencia dominante (fuerza 0.998), estacionalidad débil según STL (0.21) pero con un escalón cada enero, y choques de precios en 2004, 2008, 2021 y 2022 |
+| Estacionariedad, ACF y PACF | [pronostico.ipynb §2](pronostico.ipynb) | ADF y KPSS coinciden: no estacionaria en nivel, estacionaria con una diferencia del logaritmo. Se fija d = 1, D = 0 |
+| Cuatro modelos | [pronostico.ipynb §3](pronostico.ipynb) | Suavizamiento simple, Holt, Holt-Winters y SARIMA (1,1,0)(1,0,1)₁₂ elegido por AIC, más dos modelos de referencia |
+| MAE, RMSE y MAPE | [pronostico.ipynb §4](pronostico.ipynb) | Retención de 12 meses y validación con origen móvil (36 orígenes, horizontes de 1, 3, 6 y 12 meses). SARIMA gana a 1 y 3 meses (MAPE 0.72 % y 1.53 %); Holt-Winters a 6 (2.21 %); a 12 meses ninguno supera con claridad a la referencia |
+| Residuos (Ljung-Box) | [pronostico.ipynb §5](pronostico.ipynb) | **Ningún modelo pasa todas las pruebas.** SARIMA pasa Ljung-Box a 24 rezagos (p = 0.106) pero no a 12 (p = 0.013), y ninguno tiene residuos normales. Se reporta como limitación |
+| Conclusión | [pronostico.ipynb §6](pronostico.ipynb) | Modelo elegido: SARIMA sobre el logaritmo, con pronóstico a 12 meses e intervalos |
 
 ## Calidad en los Sistemas de Información
+Los documentos de esta sección son **borradores generados para revisión de José Rey**, responsable de Calidad.
+
 | Criterio de la rúbrica | Evidencia | Nota del equipo |
 |---|---|---|
-| Integración continua | [.github/workflows/ci.yml](../../.github/workflows/ci.yml) · [tests/](../../tests/) | ruff + 45 pruebas + pipeline completo en cada cambio |
+| Fiabilidad y disponibilidad | [calidad/reporte-fiabilidad.md](../../calidad/reporte-fiabilidad.md) · [calidad/fiabilidad.py](../../calidad/fiabilidad.py) | Disponibilidad de 100 % (5 de 5 días), 0 fallas. MTBF y MTTR no estimables todavía: se reporta la cota y el límite de confianza en lugar de inventar un valor |
+| Seguridad (gitleaks, pip-audit) | [calidad/seguridad/](../../calidad/seguridad/README.md) | 0 secretos en 12 commits, 0 vulnerabilidades en 29 paquetes. Ambas herramientas quedaron en el CI |
+| Requerimientos | [requerimientos.md](requerimientos.md) | 11 funcionales y 14 no funcionales con criterio verificable y evidencia; 4 pendientes declarados |
+| Plan SQA (IEEE 730) | [docs/plan-sqa.md](../plan-sqa.md) | 15 secciones: gestión, métricas con objetivo y valor, revisiones, pruebas, problemas, riesgos |
+| Integración continua | [.github/workflows/ci.yml](../../.github/workflows/ci.yml) · [tests/](../../tests/) | ruff, 59 pruebas, pipeline completo y revisión de seguridad en cada cambio |
 | Registro de defectos | [calidad/defectos-e1.csv](../../calidad/defectos-e1.csv) | 6 defectos encontrados y corregidos al construir E1 |
-| Insumos de fiabilidad | [calidad/bitacora-captura.csv](../../calidad/bitacora-captura.csv) · [calidad/bitacora-pipeline.csv](../../calidad/bitacora-pipeline.csv) | Una fila por ejecución, con estado y duración |
-| Fiabilidad y disponibilidad, seguridad, requerimientos y plan SQA | Pendiente | A cargo de José Rey; se entrega por separado dentro del plazo de la materia |
 
 ## Limitaciones conocidas
 1. El último dato de la estructura de INEGI que se consulta (base julio 2019 = 100) es **julio de 2025**. Falta localizar la estructura vigente y encadenarla.
 2. El tipo de cambio en bronce inicia en 2017; en oro, las columnas `fix_*` están vacías de 2004 a 2016.
-3. El índice mide variación, no precios en pesos. El precio base por ciudad saldrá de las entrevistas con ferreterías y contratistas.
-4. La captura de CENACE de E0 sigue activa en el flujo diario, pero ya no es parte del producto.
+3. Los residuos del mejor modelo de pronóstico no son ruido blanco a 12 rezagos ni normales: sus intervalos son optimistas en épocas de choque de precios.
+4. El MTBF y el MTTR no se pueden estimar con 5 días de operación sin fallas.
+5. El índice mide variación, no precios en pesos. El precio base por ciudad saldrá de las entrevistas con ferreterías y contratistas.
+6. La captura de CENACE de E0 sigue activa en el flujo diario, pero ya no es parte del producto.
 
 ## Uso de IA generativa
-Se usó Claude (Anthropic) para: localizar el servicio público de exportación de INEGI y escribir su extractor; generar el código del pipeline, la puerta de calidad, las pruebas y los flujos de GitHub Actions; ejecutar el cuaderno y redactar el borrador de esta ficha y de la relatoría. El equipo definió el tema, las reglas del proyecto y revisó lo entregado.
+Se usó Claude (Anthropic) para: localizar el servicio público de exportación de INEGI y escribir su extractor; generar el código del pipeline, la puerta de calidad, el laboratorio de pronóstico, las pruebas y los flujos de GitHub Actions; ejecutar los cuadernos; correr gitleaks y pip-audit; y redactar los borradores de esta ficha, la relatoría, los requerimientos y el plan SQA. El equipo definió el tema, las reglas del proyecto y revisó lo entregado.
 
 ## Issues de la entrega anterior
 E0 no recibió issues formales. Pendientes propios que se atienden aquí: el equipo de E0 tenía un integrante sin nombre en la ficha (ya está completo) y la entrevista con cliente sigue pendiente; se reprogramó con el guion nuevo de ObraPrecio.

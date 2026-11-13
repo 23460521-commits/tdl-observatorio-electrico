@@ -31,14 +31,28 @@ Periodo: 9 al 13 de noviembre de 2026 · Equipo: Julio Alberto Orozco Téllez, �
 - La entrevista con un cliente, pendiente desde E0.
 - El tablero público.
 - Apagar o separar la captura de CENACE, que ya no es parte del producto.
-- La parte de Análisis Estadístico y el plan SQA no forman parte de esta relatoría de Ingeniería de Datos; se entregan por separado.
+- Pronóstico por componente y para las 46 ciudades (solo Colima y Nacional).
+- Medición de cobertura de pruebas.
+
+## 4 bis. Análisis Estadístico: qué se encontró
+- **Una sola ventana de prueba engaña.** Con los últimos 12 meses, SARIMA quedaba peor que repetir el último valor en Colima y era el mejor en el Nacional. Por eso se agregó la validación con 36 orígenes, que es la que decide.
+- **El suavizamiento simple resultó idéntico al modelo ingenuo** (α ≈ 1). Se reporta tal cual: en esta serie no aporta.
+- **La estacionalidad parecía débil y no lo era del todo.** La STL daba fuerza de 0.2, pero la ACF del rezago 12 (0.39) era mayor que la del rezago 1 y los residuos de tres modelos fallaban justo en los rezagos 12 y 24: el índice da un escalón cada enero.
+- **Ningún modelo dejó residuos de ruido blanco.** Se amplió la búsqueda de SARIMA y no apareció uno que pasara Ljung-Box a 12 y 24 rezagos. Se decidió reportarlo como limitación en lugar de escoger los rezagos que sí pasan.
+- La primera redacción del cuaderno decía que los residuos fallaban en el primer rezago; al ver las gráficas era en el 12. Se corrigió contra las salidas.
+
+## 4 ter. Calidad: qué se encontró
+- **Con 5 días sin fallas no se puede calcular MTBF ni MTTR.** En lugar de reportar "infinito" se reporta la cota (más de 86 horas) y el límite superior de 95 % para la probabilidad de falla por ejecución (45 %), que deja claro lo poco que se sabe todavía.
+- **Una fuente opcional nunca ha traído datos:** la petición del día siguiente de CENACE se omitió en 5 de 5 ejecuciones. Queda como observación.
+- gitleaks y pip-audit salieron limpios y se agregaron al CI.
+- Requerimientos y plan SQA son borradores generados con IA; falta la revisión de José Rey.
 
 ## 5. Reparto del trabajo
 | Integrante | E1 |
 |---|---|
 | Julio Alberto Orozco Téllez | Administrador del repositorio; base de extractores y captura diaria de E0 que E1 reutiliza |
 | Ángel Salvador Álvarez | Propuesta del cambio de tema, coordinación con el equipo y los docentes, dirección y revisión del pipeline de E1 construido con asistencia de IA |
-| José Rey Sánchez Navarro | Calidad: plan SQA, requerimientos, fiabilidad y seguridad (en curso) |
+| José Rey Sánchez Navarro | Calidad: revisión y aprobación del plan SQA, los requerimientos y los reportes de fiabilidad y seguridad (borradores listos, revisión pendiente) |
 
 ## 6. Lecciones
 1. Buscar al cliente antes de escoger los datos: el cambio de tema costó la semana.

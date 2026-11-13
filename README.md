@@ -40,7 +40,10 @@ fuentes -> data/bronce (respuesta exacta + SHA-256)
 
 ```bash
 python -m pipeline.ejecutar      # regenera plata, oro, cuarentena y calidad/reporte-puerta.json
+python calidad/fiabilidad.py     # recalcula calidad/reporte-fiabilidad.md
 ```
+
+Pronóstico del índice: [docs/E1/pronostico.ipynb](docs/E1/pronostico.ipynb) con `laboratorio/modelos.py`. Calidad: [plan SQA](docs/plan-sqa.md), [requerimientos](docs/E1/requerimientos.md), [fiabilidad](calidad/reporte-fiabilidad.md) y [seguridad](calidad/seguridad/README.md).
 
 Para regenerar el catálogo de series o bajar de nuevo la historia de INEGI: `python -m extractores.inegi --catalogo --historico`.
 

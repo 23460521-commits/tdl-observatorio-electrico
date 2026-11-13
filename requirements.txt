@@ -6,3 +6,5 @@ numpy>=1.26
 pandera>=0.20
 scipy>=1.11
 scikit-learn>=1.4
+# Laboratorio estadistico
+statsmodels>=0.14
