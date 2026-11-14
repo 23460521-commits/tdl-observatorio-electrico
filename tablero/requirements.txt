@@ -1,0 +1,4 @@
+# Dependencias del tablero publico (Streamlit Community Cloud lee este archivo)
+streamlit>=1.50
+pandas>=2.2
+altair>=5.3

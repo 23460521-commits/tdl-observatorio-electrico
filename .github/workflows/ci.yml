@@ -6,8 +6,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
-    paths-ignore: ["data/**", "calidad/bitacora-*.csv", "**.md"]
+    branches: [main]   # todo push, tambien el que solo cambia documentos
   pull_request:
   workflow_dispatch:
 

@@ -1,64 +1,51 @@
-# Relatoría de la etapa E1
+# Relatoría E1 · ObraPrecio (TRUSTED DATA LAB)
+Equipo: Julio Alberto Orozco Téllez, Ángel Salvador Álvarez Fernández y José Rey Sánchez Navarro (solo Calidad) · Periodo: 2 al 13 de noviembre de 2026
 
-Periodo: 9 al 13 de noviembre de 2026 · Equipo: Julio Alberto Orozco Téllez, Ángel Salvador Álvarez y José Rey Sánchez Navarro (participa solo en Calidad en los Sistemas de Información).
+## 1. Qué nos propusimos
+Que los datos viajen de bronce a oro sin intervención, pasando por una puerta de calidad que rechace con motivo; pronosticar la serie principal con cuatro modelos y elegir por error fuera de muestra; y medir con bitácoras qué tan disponible estuvo la captura contra el objetivo de E0 (≥ 95 %).
 
-## 1. Qué pasó en esta etapa
-1. **La captura de E0 siguió corriendo sola.** Del 9 al 13 de noviembre el flujo diario de GitHub Actions capturó CENACE y Banxico sin fallas de fuentes obligatorias (ver `calidad/bitacora-captura.csv`).
-2. **Se cambió el tema del proyecto.** Al intentar aterrizar el modelo de negocio del Observatorio Eléctrico no se encontró un cliente al alcance del equipo. Se evaluaron cuatro ideas y se eligió ObraPrecio (costo de construcción por ciudad). El razonamiento está en [E1/pivote-obraprecio.md](E1/pivote-obraprecio.md). El equipo lo aprobó en el grupo de trabajo el 13 de noviembre; la confirmación de los docentes está solicitada y pendiente.
-3. **Se incorporó José Rey.** No cursa Ingeniería de Datos ni Análisis Estadístico, así que su participación se limita a Calidad.
-4. **Se construyó E1 en un día.** La decisión del cambio se tomó el mismo día de la entrega. Se construyeron el extractor de INEGI, el pipeline plata/oro, la puerta de calidad, las pruebas, el cuaderno y esta documentación.
+## 2. Qué hicimos (cronología con fechas, responsable y horas)
+| Fecha y hora (centro) | Qué | Quién | Tiempo |
+|---|---|---|---|
+| 9 al 13 nov, 05:00 | Captura diaria automática de CENACE y Banxico: 5 ejecuciones, 0 fallas | Flujo de GitHub Actions (configurado por Julio en E0) | 10 s por ejecución |
+| 12 y 13 nov | Búsqueda de cliente para el Observatorio Eléctrico; evaluación de 4 ideas; consulta a equipo, familia y docentes | Ángel | Sin registro |
+| 13 nov, 13:20 | Decisión de cambiar a ObraPrecio; el equipo la aprueba | Ángel, Julio, José Rey | |
+| 13 nov, 13:22 a 13:41 | Extractor de INEGI, pipeline plata y oro, puerta Pandera, cuaderno de limpieza, CI | Ángel con asistente de IA | 0.3 h de sesión |
+| 13 nov, 15:55 a 16:15 | Laboratorio de pronóstico, fiabilidad, seguridad, borradores de plan SQA y requerimientos | Ángel con asistente de IA | 0.3 h |
+| 13 nov, 16:22 a 16:35 | Se detecta que los datos terminaban en julio de 2025; se localiza la estructura vigente de INEGI y se regenera todo | Ángel con asistente de IA | 0.2 h |
+| 13 nov, 17:11 | Verificación del CI y registro de la entrega | Julio | Sin registro |
+| 13 nov, 19:32 a 19:57 | Revisión del plan SQA y de los requerimientos, con 7 observaciones | José Rey | 0.4 h |
+| 13 nov, 20:56 a 22:00 | Lectura del documento completo del proyecto; se completa lo faltante (diccionario, tablero, respaldo, correlación cruzada, esta relatoría) | Ángel con asistente de IA | 1 h |
 
-## 2. Decisiones técnicas y por qué
-| Decisión | Alternativa descartada | Razón |
-|---|---|---|
-| Usar la exportación CSV pública del sitio de índices de precios de INEGI | API del Banco de Indicadores (pide token y no se tenía el identificador de cada serie) | Sin llave, robots.txt lo permite y entrega las 188 series con sus metadatos |
-| Guardar el catálogo de series en un archivo versionado | Consultarlo en cada corrida | Menos peticiones a la fuente y el pipeline corre sin internet |
-| Catálogo explícito de ciudades | Extraer el estado del texto con expresiones regulares | La fuente escribe "Villahermosa,Tab." y "Cd. Jiménez Chih."; adivinar es frágil. Lo que no está en catálogo va a cuarentena |
-| No imputar los `N/E` | Rellenar hacia atrás | Son periodos en que la serie no existía; rellenar sería inventar historia |
-| Marcar y winsorizar atípicos en columna aparte | Eliminarlos | Aparecen en muchas ciudades el mismo mes: son choques de precios reales, justo lo que el usuario quiere ver |
-| Referencia distinta para series escalonadas | Aplicar IQR y MAD igual a todo | En mano de obra y maquinaria más de la mitad de los meses no cambian; IQR y MAD valen 0 |
-| Excluir `general` de los modelos | Usar las cuatro variables | Correlación de 0.99 con materiales; es redundante |
-| Conservar la primera captura cuando el valor se repite | Conservar la última | La procedencia de cada fila no cambia en cada corrida y los archivos de plata solo cambian cuando cambian los datos |
+Los tiempos de sesión salen de las marcas de hora de los commits. **El registro individual de tiempo no se llevó en E1** (ver sección 4).
 
-## 3. Problemas encontrados
-- **Los datos de la primera estructura consultada terminaban en julio de 2025.** Se detectó al revisar el periodo disponible que declara la fuente. La causa: INEGI actualizó el índice en agosto de 2025 y lo publica en una estructura nueva con otras claves de serie. Se localizó la vigente (datos hasta octubre de 2026), se comprobó que coincide con la anterior en los 68,968 valores comunes y se volvió a correr todo. Las etiquetas `e1` y `e1-final` conservan la versión con datos a julio de 2025; `e1-v2` trae la corregida.
-- **Un componente llegó con otro nombre** ("-- Materiales de construcción") y generaba una quinta categoría. Se detectó al revisar la matriz de correlaciones.
-- **Dos afirmaciones del cuaderno no coincidían con sus propias salidas** (número de celdas faltantes y oleadas de incorporación de ciudades). Se corrigieron contra los datos antes de entregar.
-- **El tipo de cambio solo cubre desde 2017**, por lo que la integración con el índice queda parcial de 2004 a 2016.
-- Los siete defectos están registrados en [calidad/defectos-e1.csv](../calidad/defectos-e1.csv).
+## 3. Qué decidimos y por qué (alternativas descartadas)
+1. **Cambiar de tema el día de la entrega.** El Observatorio Eléctrico no tenía cliente al alcance. Se descartaron plátano (otro equipo), sistema médico (datos personales) y remesas (pocas variables). Costo: E1 se construyó en un día.
+2. **No imputar los `N/E` de INEGI.** Son periodos en que la serie no existía (0 huecos interiores). Se descartó rellenar hacia atrás; oro arranca en 2004 con panel completo.
+3. **Elegir el modelo por error en 36 orígenes y no por AIC ni por una sola ventana.** Ocho SARIMA quedaban a menos de 4 puntos de AIC. Con una sola ventana de 12 meses ganaba una regla simple que en 36 orígenes resultó la peor.
+4. **Marcar atípicos en lugar de borrarlos.** Aparecen el mismo mes en muchas ciudades: son choques de precios reales.
 
-## 4. Qué no se hizo
-- La entrevista con un cliente, pendiente desde E0.
-- El tablero público.
-- Apagar o separar la captura de CENACE, que ya no es parte del producto.
-- Pronóstico por componente y para las 46 ciudades (solo Colima y Nacional).
-- Medición de cobertura de pruebas.
+## 4. Qué salió mal y cómo lo corregimos (con número de defecto)
+- **Defecto 9 (180 min, el más caro):** E1 se construyó desde el texto de una tarea de Classroom y no desde el documento del proyecto. Faltaban diccionario de datos, tablero, respaldo de bronce, correlación cruzada y este formato. Se completó la misma noche.
+- **Defecto 7 (60 min):** se consultó una estructura de INEGI congelada en julio de 2025. Se localizó la vigente y se comprobó que coinciden en los 68,968 valores comunes.
+- **Defecto 2 (15 min):** IQR y Z robusto marcaban todo ajuste de mano de obra como atípico (series escalonadas, MAD = 0).
+- **Defecto 8 (10 min):** el CI no corría en push de solo documentos. Lo detectó José Rey.
+- **Defecto 5 (10 min):** dos afirmaciones del cuaderno no coincidían con sus salidas.
+- **Sin resolver:** solo hay 5 días de bitácora de los 7 pedidos (la captura inició el 9); no se llevaron registros individuales de tiempo ni de defectos; el tablero no tiene URL pública; el equipo tiene tres personas y el proyecto pide máximo dos, pendiente de consultar con los docentes.
 
-## 4 bis. Análisis Estadístico: qué se encontró
-- **Una sola ventana de prueba engaña.** Con los últimos 12 meses, SARIMA quedaba peor que repetir el último valor en Colima y era el mejor en el Nacional. Por eso se agregó la validación con 36 orígenes, que es la que decide.
-- **El suavizamiento simple resultó idéntico al modelo ingenuo** (α ≈ 1). Se reporta tal cual: en esta serie no aporta.
-- **La estacionalidad parecía débil y no lo era del todo.** La STL daba fuerza de 0.2, pero la ACF del rezago 12 (0.39) era mayor que la del rezago 1 y los residuos de tres modelos fallaban justo en los rezagos 12 y 24: el índice da un escalón cada enero.
-- **El modelo elegido no deja residuos de ruido blanco.** Al ampliar la búsqueda de SARIMA a 64 variantes, una sola pasó Ljung-Box a 12 y 24 rezagos. No se eligió: escoger el modelo por ser el único que pasa el diagnóstico es ajustarlo a la prueba. Se reporta la limitación y el candidato.
-- **Las conclusiones cambiaron con más datos.** Con datos a julio de 2025, a 12 meses ningún modelo superaba a la referencia de deriva; con datos a octubre de 2026 gana Holt-Winters. El resultado de corto plazo (SARIMA a 1 y 3 meses) se mantuvo.
-- La primera redacción del cuaderno decía que los residuos fallaban en el primer rezago; al ver las gráficas era en el 12. Se corrigió contra las salidas.
+## 5. Qué aprendimos
+### Ingeniería de Datos
+Un faltante no siempre se imputa: los 24,604 `N/E` eran MAR estructural y la decisión correcta fue no tocarlos. Y la fuente puede cambiar sin avisar: INEGI movió el índice a otra estructura con claves nuevas, y lo resolvió integrar por ciudad y componente, no por clave.
+### Análisis Estadístico
+Una sola ventana de prueba engaña: la referencia de deriva ganó en los últimos 12 meses (MAPE 0.70 %) y fue la peor en 36 orígenes. Y la fuerza estacional de la STL (0.2) escondía un escalón cada enero que la ACF del rezago 12 (0.39) sí mostraba.
+### Calidad en los Sistemas de Información
+Sin fallas no hay MTBF ni MTTR: con 5 ejecuciones exitosas lo único demostrable es que la probabilidad de falla es menor a 45 %. Y la revisión independiente funciona: quien no escribió el plan encontró que el CI no cubría todos los push.
 
-## 4 ter. Calidad: qué se encontró
-- **Con 5 días sin fallas no se puede calcular MTBF ni MTTR.** En lugar de reportar "infinito" se reporta la cota (más de 86 horas) y el límite superior de 95 % para la probabilidad de falla por ejecución (45 %), que deja claro lo poco que se sabe todavía.
-- **Una fuente opcional nunca ha traído datos:** la petición del día siguiente de CENACE se omitió en 5 de 5 ejecuciones. Queda como observación.
-- gitleaks y pip-audit salieron limpios y se agregaron al CI.
-- Requerimientos y plan SQA son borradores generados con IA; falta la revisión de José Rey.
+## 6. Evidencias
+- Commits: [pipeline y puerta](https://github.com/23460521-commits/tdl-observatorio-electrico/commit/7d5d1dc) · [pronóstico y calidad](https://github.com/23460521-commits/tdl-observatorio-electrico/commit/fcb50aa) · [estructura vigente de INEGI](https://github.com/23460521-commits/tdl-observatorio-electrico/commit/bc60585) · [revisión de Calidad](https://github.com/23460521-commits/tdl-observatorio-electrico/commit/6add90e)
+- Cuadernos: [limpieza](E1/limpieza.ipynb) · [pronóstico](E1/pronostico.ipynb)
+- Calidad: [reporte de la puerta](../calidad/reporte-puerta.json) · [fiabilidad](../calidad/reporte-fiabilidad.md) · [seguridad y respaldo](../calidad/seguridad/README.md) · [defectos](../calidad/defectos-e1.csv) · [plan SQA](plan-sqa.md)
+- CI en GitHub Actions: ejecución 43524364243, en verde (pipeline 6 s).
 
-## 5. Reparto del trabajo
-| Integrante | E1 |
-|---|---|
-| Julio Alberto Orozco Téllez | Administrador del repositorio; base de extractores y captura diaria de E0 que E1 reutiliza |
-| Ángel Salvador Álvarez | Propuesta del cambio de tema, coordinación con el equipo y los docentes, dirección y revisión del pipeline de E1 construido con asistencia de IA |
-| José Rey Sánchez Navarro | Calidad: revisión y aprobación del plan SQA, los requerimientos y los reportes de fiabilidad y seguridad (borradores listos, revisión pendiente) |
-
-## 6. Lecciones
-1. Buscar al cliente antes de escoger los datos: el cambio de tema costó la semana.
-2. La puerta de calidad sirvió también para revisar al propio equipo: la revisión de base julio 2019 = 100 confirma en cada corrida que se está leyendo la estructura correcta del índice.
-3. Leer las salidas antes de escribir las conclusiones.
-
-## 7. Siguiente etapa
-Entrevistas de validación, precio base por ciudad para pasar de índice a pesos, tablero con chat de consulta sobre la capa oro.
+## Uso de IA generativa (herramienta y para qué)
+Claude (Anthropic). Se usó para localizar el servicio de exportación de INEGI, generar el código de extractores, pipeline, laboratorio, tablero, pruebas y flujos, ejecutar los cuadernos, correr gitleaks y pip-audit, y redactar los borradores de la ficha, esta relatoría, los requerimientos y el plan SQA. Decisiones humanas: el tema, las reglas del proyecto, la aprobación del cambio y la revisión de Calidad. Lo que el equipo no pueda explicar en la defensa no cuenta: está previsto estudiar el repositorio antes del panel del 17 y 18 de noviembre.

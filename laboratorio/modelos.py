@@ -16,7 +16,7 @@ import warnings
 
 import numpy as np
 import pandas as pd
-from statsmodels.stats.diagnostic import acorr_ljungbox
+from statsmodels.stats.diagnostic import acorr_ljungbox, het_arch
 from statsmodels.stats.stattools import jarque_bera
 from statsmodels.tools.sm_exceptions import ConvergenceWarning
 from statsmodels.tsa.holtwinters import ExponentialSmoothing, SimpleExpSmoothing
@@ -222,14 +222,49 @@ def resumen_validacion(vc):
 
 # --- Residuos ----------------------------------------------------------------------------------
 def diagnostico_residuos(residuos, n_param=0, rezagos=(12, 24)):
-    """Ljung-Box (H0: residuos sin autocorrelacion), media y normalidad (Jarque-Bera)."""
+    """Ljung-Box (H0: sin autocorrelacion), varianza estable (ARCH-LM, H0: varianza
+    constante), media y normalidad (Jarque-Bera)."""
     r = pd.Series(residuos).dropna()
     fila = {"n": len(r), "media": float(r.mean()), "desv": float(r.std())}
     for k in rezagos:
         lb = acorr_ljungbox(r, lags=[k], model_df=min(n_param, k - 1))
         fila[f"LB({k})"] = float(lb["lb_stat"].iloc[0])
         fila[f"p LB({k})"] = float(lb["lb_pvalue"].iloc[0])
-    jb = jarque_bera(r)
-    fila["p Jarque-Bera"] = float(jb[1])
+    fila["p ARCH(12)"] = float(het_arch(r, nlags=12)[1])
+    fila["p Jarque-Bera"] = float(jarque_bera(r)[1])
     fila["ruido blanco"] = all(fila[f"p LB({k})"] >= 0.05 for k in rezagos)
+    fila["varianza estable"] = fila["p ARCH(12)"] >= 0.05
     return fila
+
+
+def lista_corta_sarima(s, tabla_aic, delta_max=4.0, h=12, origenes=36):
+    """Candidatos con AIC a no mas de `delta_max` del mejor, comparados por su error fuera
+    de muestra (validacion con origen movil) y por el diagnostico de sus residuos.
+
+    El AIC propone; el error en datos que el modelo no vio decide.
+    """
+    ent, filas = s.iloc[:-h], []
+    cerca = tabla_aic[tabla_aic["AIC"] - tabla_aic["AIC"].min() <= delta_max]
+    for _, c in cerca.iterrows():
+        orden, est = tuple(c["orden"]), (*c["estacional"], PERIODO)
+        vc = resumen_validacion(
+            validacion_origen_movil(s, origenes=origenes, sarima=(orden, est), modelos=["sarima"])
+        ).set_index("h")
+        m = ajustar("sarima", ent, (orden, est))
+        d = diagnostico_residuos(m["residuos"], m["n_param"])
+        filas.append({
+            "orden": orden, "estacional": est[:3], "parametros": m["n_param"],
+            "delta AIC": c["AIC"] - tabla_aic["AIC"].min(),
+            **{f"MAPE % h={k}": vc["MAPE_pct"][k] for k in vc.index},
+            "RMSE h=1": vc["RMSE"][1], "p LB(12)": d["p LB(12)"], "p LB(24)": d["p LB(24)"],
+        })  # fmt: skip
+    return pd.DataFrame(filas).sort_values("RMSE h=1").reset_index(drop=True)
+
+
+def correlacion_cruzada(x, z, rezagos=12):
+    """Correlacion entre x(t) y z(t-k), k = 0..rezagos: ¿z anticipa a x?"""
+    d = pd.concat([x.rename("x"), z.rename("z")], axis=1).dropna()
+    filas = [{"rezago": k, "correlacion": d["x"].corr(d["z"].shift(k))} for k in range(rezagos + 1)]
+    t = pd.DataFrame(filas)
+    t.attrs["n"], t.attrs["limite"] = len(d), 1.96 / np.sqrt(len(d))
+    return t

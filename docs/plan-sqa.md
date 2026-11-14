@@ -1,12 +1,12 @@
 # Plan de Aseguramiento de la Calidad del Software (SQAP) · ObraPrecio
 
-Estructura basada en IEEE Std 730. Versión 1.0 del 13 de noviembre de 2026.
-Estado: **borrador para revisión y aprobación del responsable de Calidad** (José Rey Sánchez Navarro).
+Estructura basada en IEEE Std 730. Versión 1.2 del 13 de noviembre de 2026.
+Estado: **revisado por el responsable de Calidad (José Rey Sánchez Navarro) en la versión 1.1; la 1.2 incorpora la comprobación de las evidencias que pidió. Pendiente de su aprobación final.**
 
 ## 1. Propósito y alcance
 Este plan define cómo el equipo asegura la calidad de ObraPrecio, el módulo del TRUSTED DATA LAB que informa cuánto ha subido el costo de construir vivienda en 46 ciudades de México.
 
-Cubre todo lo que vive en el repositorio: extractores, pipeline de datos (bronce, plata, oro y cuarentena), laboratorio estadístico, flujos de GitHub Actions, datos publicados y documentación. Queda fuera lo que aún no existe (tablero y chat de consulta); se incorporará en la siguiente versión del plan.
+Cubre todo lo que vive en el repositorio: extractores, pipeline de datos (bronce, plata, oro y cuarentena), laboratorio estadístico, flujos de GitHub Actions, datos publicados y documentación. Incluye el tablero (`tablero/app.py`), construido en E1 y todavía sin publicar. Queda fuera el chat de consulta, que aún no existe.
 
 ## 2. Documentos de referencia
 - IEEE Std 730, Software Quality Assurance Processes.
@@ -31,7 +31,7 @@ Independencia: quien revisa una entrega no es quien escribió el cambio principa
 | Etapa | Tareas de SQA | Producto |
 |---|---|---|
 | E0 | Definir objetivos de calidad, bitácora de captura, pruebas de extractores | Hecho |
-| E1 | Puerta de calidad de datos, CI, revisión de seguridad, primer cálculo de fiabilidad, este plan | Hecho |
+| E1 | Puerta de calidad de datos, CI, revisión de seguridad, primer cálculo de fiabilidad, este plan | Hecho; evidencias comprobadas en la versión 1.2, salvo los 7 días de bitácora |
 | E2 | Auditoría del tablero, pruebas de aceptación con usuarios entrevistados, recálculo de MTBF y MTTR con más historia | Pendiente |
 
 ## 4. Documentación
@@ -58,25 +58,32 @@ Regla: toda cifra escrita en un documento debe poder regenerarse con un comando 
 ### 5.2 Métricas y objetivos
 | Métrica | Cómo se mide | Objetivo | Valor en E1 |
 |---|---|---|---|
-| Disponibilidad de la captura | `python calidad/fiabilidad.py` | ≥ 95 % | 100 % (5 de 5 días) |
+| Éxito de captura programada (días con ejecución exitosa) | `python calidad/fiabilidad.py` y bitácoras | ≥ 95 % | 100 % (5 de 5 días observados; período parcial) |
+| Disponibilidad temporal de captura | Bitácoras y tiempos de falla y recuperación; `A = MTBF / (MTBF + MTTR)` cuando sea aplicable | ≥ 95 % | No calculable de forma robusta con el registro disponible; no hay fallas observadas |
 | MTTR | Igual | ≤ 24 h | Sin fallas registradas |
 | MTBF | Igual | Se reporta; sin objetivo aún | No estimable (0 fallas en 86 h) |
+| Tasa de éxito por ejecución | Igual | Se reporta | 100 % (5 de 5 ejecuciones) |
+| Días de bitácora | Igual | 7 | **5** (9 al 13 de noviembre) |
 | Registros aceptados por la puerta | `calidad/reporte-puerta.json` | Se reporta por fuente | INEGI 74.48 %, Banxico 98.88 % |
 | Registros perdidos sin motivo | Balance bronce = plata + cuarentena + duplicados | 0 | 0 |
 | Huecos dentro de las series | Revisión `continuidad_mensual` | 0 | 0 |
-| Pruebas automáticas que pasan | `pytest` | 100 % | 60 de 60 |
+| Pruebas automáticas que pasan | `pytest` | 100 % | 63 de 63 |
 | Errores de estilo | `ruff check .` | 0 | 0 |
 | Secretos expuestos | gitleaks | 0 | 0 |
 | Dependencias vulnerables | pip-audit | 0 | 0 |
-| Defectos registrados y cerrados | `calidad/defectos-e1.csv` | 100 % cerrados antes de etiquetar | 7 de 7 |
-| Error del pronóstico a 1 mes (MAPE) | `docs/E1/pronostico.ipynb` | Se reporta; objetivo por fijar con el cliente | 0.47 % (Colima, SARIMA) |
+| Respaldo de bronce restaurable | `python calidad/respaldo_bronce.py` | 0 archivos distintos | 0 de 2,137 |
+| Duración del pipeline en GitHub Actions | Pasos de la ejecución del CI | ≤ 60 s | 6 s |
+| Defectos registrados y cerrados | `calidad/defectos-e1.csv` | 100 % cerrados antes de etiquetar | 9 de 9 |
+| Error del pronóstico a 1 mes (MAPE) | `docs/E1/pronostico.ipynb` | Se reporta; objetivo por fijar con el cliente | 0.43 % (Colima, SARIMA) |
 
 El porcentaje aceptado de INEGI es bajo por una razón conocida: los rechazados son celdas `N/E` de periodos en que la serie no existía, no errores.
+
+**Limitación E1:** el valor de 100 % anterior expresa éxito en los cinco días observados, no disponibilidad temporal demostrada durante siete días. La rúbrica pide siete días de bitácoras; el período faltante debe completarse con registros auténticos o declararse como evidencia incompleta. Como no se registraron fallas ni reparaciones, MTBF y MTTR no son estimables con los datos actuales. Las demás cifras de la tabla se contrastaron con sus archivos fuente en la versión 1.2: seguridad y duración, con la ejecución 43524364243 de GitHub Actions; pruebas y estilo, con la corrida previa a la etiqueta.
 
 ## 6. Revisiones y auditorías
 | Revisión | Cuándo | Quién | Criterio de salida |
 |---|---|---|---|
-| Revisión de cambio | En cada subida a `main` | CI automático | ruff, pytest, pipeline y seguridad en verde |
+| Revisión de cambio | En cada push a `main` y en cada pull request | CI automático | ruff, pytest, pipeline y seguridad en verde en el commit que se entrega |
 | Revisión de entrega | Antes de crear la etiqueta | Responsable de Calidad | Lista siguiente completa |
 | Auditoría de datos | En cada corrida del pipeline | Puerta de calidad | Sin revisiones graves fallidas |
 | Revisión posterior a un incidente | Tras cada falla de captura | Calidad y administrador | Defecto registrado con causa y corrección |
@@ -90,13 +97,16 @@ El porcentaje aceptado de INEGI es bajo por una razón conocida: los rechazados 
 6. Los defectos de la etapa están registrados y cerrados, o listados como abiertos.
 7. La relatoría describe el reparto real del trabajo y el uso de IA.
 
+Hallazgo de la revisión de E1: el CI excluía los push que solo cambiaban documentos o datos. La revisión de este plan lo detectó (su propio commit no disparó el CI) y se corrigió: defecto 8.
+
 ## 7. Pruebas
 | Nivel | Qué cubre | Dónde | Cantidad en E1 |
 |---|---|---|---|
-| Unitarias | Extractores, limpieza de formato, funciones estadísticas, modelos de pronóstico | `tests/` | 60 |
+| Unitarias | Extractores, limpieza de formato, funciones estadísticas, modelos de pronóstico | `tests/` | 63 |
 | Integración | Pipeline de punta a punta con bronce sintético | `test_pipeline_completo_escribe_plata_oro_y_cuarentena` | 1 |
 | Datos (contrato) | Esquemas Pandera y revisiones de conjunto sobre los datos reales | `pipeline/puerta.py` | 2 esquemas, 6 revisiones |
-| Sistema | Pipeline completo contra los datos del repositorio en GitHub Actions | `.github/workflows/ci.yml` | En cada cambio |
+| Sistema | Pipeline completo contra los datos del repositorio en GitHub Actions | `.github/workflows/ci.yml` | En cada push y pull request |
+| Tablero | Carga, selección de ciudad y pronóstico sin errores (`streamlit.testing`) | Prueba manual en desarrollo | Sin automatizar todavía |
 | Aceptación | Con usuarios reales (entrevistados) | | Pendiente (E2) |
 
 Las pruebas no usan internet: las respuestas de las fuentes se simulan. No se mide todavía la cobertura de código; se agregará en E2.
@@ -108,7 +118,7 @@ Las pruebas no usan internet: las respuestas de las fuentes se simulan. No se mi
 4. Un registro inválido en los datos no es un defecto del código: va a cuarentena con su motivo. Si el motivo se repite, se abre un defecto para revisar la regla o el extractor.
 5. Una falla de la captura programada deja la ejecución en rojo en GitHub Actions y una fila `fallo` en la bitácora; el administrador la atiende en menos de 24 h.
 
-Defectos de E1: 7 registrados, 7 corregidos (2 de datos, 2 de función, 1 de entorno, 1 de documentación, 1 de estilo).
+Defectos de E1: 9 registrados, 9 corregidos (2 de datos, 3 de función, 1 de entorno, 1 de documentación, 1 de sintaxis y 1 de construcción). En E1 el registro se llevó en un solo archivo del equipo; desde E2 será uno por integrante (`calidad/defectos-<nombre>.csv`), como pide PSP.
 
 ## 9. Herramientas, técnicas y metodologías
 | Herramienta | Uso |
@@ -118,6 +128,8 @@ Defectos de E1: 7 registrados, 7 corregidos (2 de datos, 2 de función, 1 de ent
 | pytest | Pruebas automáticas |
 | ruff | Estilo y errores comunes |
 | Pandera | Contrato de datos (puerta de calidad) |
+| statsmodels | Modelos de pronóstico y pruebas estadísticas |
+| Streamlit | Tablero |
 | gitleaks | Búsqueda de secretos en el historial |
 | pip-audit | Vulnerabilidades en dependencias |
 | PSP (registros de defectos y tiempo) | Medición del proceso personal |
@@ -127,6 +139,8 @@ Defectos de E1: 7 registrados, 7 corregidos (2 de datos, 2 de función, 1 de ent
 - El repositorio de GitHub es la única fuente de verdad; cada entrega queda fija con una etiqueta (`e0`, `e1`).
 - La capa bronce guarda la respuesta original comprimida con su SHA-256; las tablas de salida registran su SHA-256 en el reporte de la puerta.
 - Los secretos viven en GitHub Secrets y no se copian a ningún otro lugar.
+- La capa bronce se respalda con prueba de restauración (`calidad/respaldo_bronce.py`; flujo semanal `respaldo.yml`).
+- El historial de `main` no se reescribe. Excepción registrada: el 13 de noviembre se hizo un push forzado para corregir el autor de los commits de E1; el contenido no cambió.
 
 ## 11. Control de proveedores
 | Proveedor | Qué entrega | Riesgo | Control |
@@ -151,6 +165,9 @@ José Rey no cursa Ingeniería de Datos ni Análisis Estadístico: Julio y Ánge
 | No conseguir entrevistas con usuarios | Media | Alto | Empezar por contactos de la familia y del equipo |
 | El pronóstico falla ante un choque de precios | Media | Medio | Se publica el error por horizonte y se advierte en el producto |
 | Fuga del token de Banxico | Baja | Medio | GitHub Secrets, gitleaks en CI |
+| El equipo tiene tres personas y el proyecto pide máximo dos | Ya ocurrió | Alto | Consultarlo con los docentes antes del panel de medio término |
+| Evidencia de fiabilidad con 5 días de 7 | Ya ocurrió | Medio | Declarado en el reporte; se recalcula en E2 con más historia |
+| Integrantes que no pueden explicar una parte hecha con IA en la defensa | Media | Alto | Sesión de estudio del repositorio antes del panel del 17 y 18 de noviembre |
 
 ## 15. Control de cambios de este plan
 Los cambios se hacen por commit, con aprobación del responsable de Calidad, y se anotan aquí.
@@ -158,3 +175,5 @@ Los cambios se hacen por commit, con aprobación del responsable de Calidad, y s
 | Versión | Fecha | Cambio |
 |---|---|---|
 | 1.0 | 2026-11-13 | Primera versión, para la entrega E1 |
+| 1.1 | 2026-11-13 | Revisión del responsable de Calidad: aclara la tasa de éxito frente a la disponibilidad temporal y señala evidencias por comprobar |
+| 1.2 | 2026-11-13 | Evidencias comprobadas (seguridad y duración en GitHub Actions), CI en todo push, respaldo de bronce, tablero dentro del alcance, defectos 8 y 9. Pendiente de aprobación final |

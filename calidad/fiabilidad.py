@@ -22,6 +22,7 @@ RAIZ = Path(__file__).resolve().parent
 OBLIGATORIAS = {"cenace_pend_mda", "banxico_fix"}
 OBJETIVO_DISPONIBILIDAD = 95.0
 OBJETIVO_MTTR_H = 24.0
+DIAS_PEDIDOS = 7  # la entrega E1 pide siete dias de bitacora
 
 
 def leer(nombre):
@@ -107,6 +108,16 @@ def reporte():
         f"{disp:.1f} % ({k['dias_con_captura']} de {k['dias_periodo']}) | "
         f"≥ {OBJETIVO_DISPONIBILIDAD:.0f} % | {'Sí' if disp >= OBJETIVO_DISPONIBILIDAD else 'No'} |"
     )
+    exitos = k["ejecuciones"] - k["fallas"]
+    lineas.append(
+        f"| Tasa de éxito por ejecución | {exitos / k['ejecuciones'] * 100:.1f} % "
+        f"({exitos} de {k['ejecuciones']}) | | |"
+    )
+    lineas.append(
+        f"| Días de bitácora disponibles | {k['dias_periodo']} ({k['desde']} a {k['hasta']}) | "
+        f"{DIAS_PEDIDOS} (del 6 al 13 de noviembre) | "
+        f"{'Sí' if k['dias_periodo'] >= DIAS_PEDIDOS else 'No'} |"
+    )
     lineas.append(f"| Fallas de fuentes obligatorias | {k['fallas']} | | |")
     if k["mtbf_h"] is None:
         lineas.append(
@@ -157,6 +168,12 @@ def reporte():
         "",
         "## Lectura",
         "",
+        f"- **Evidencia incompleta: hay {k['dias_periodo']} días de bitácora y la entrega pide "
+        f"{DIAS_PEDIDOS}.** La captura programada empezó el {k['desde']}, tres días después de "
+        "lo previsto; esos días no se pueden reponer y no se inventan.",
+        "- La disponibilidad A = MTBF / (MTBF + MTTR) no se puede calcular sin fallas: no hay "
+        "MTBF ni MTTR. Lo que se reporta es la disponibilidad operativa (días con captura "
+        "exitosa entre días del periodo).",
         f"- En {k['dias_periodo']} días no hubo fallas de fuentes obligatorias, así que la "
         "disponibilidad observada es de 100 % y cumple el objetivo.",
         f"- **La muestra es muy chica.** Con {k['ejecuciones']} ejecuciones sin falla, lo único "

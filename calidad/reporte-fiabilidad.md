@@ -9,6 +9,8 @@ Periodo observado: 2026-11-09 a 2026-11-13 (5 días, 5 ejecuciones del flujo dia
 | Indicador | Valor | Objetivo | Cumple |
 |---|---|---|---|
 | Disponibilidad operativa (días con captura exitosa / días del periodo) | 100.0 % (5 de 5) | ≥ 95 % | Sí |
+| Tasa de éxito por ejecución | 100.0 % (5 de 5) | | |
+| Días de bitácora disponibles | 5 (2026-11-09 a 2026-11-13) | 7 (del 6 al 13 de noviembre) | No |
 | Fallas de fuentes obligatorias | 0 | | |
 | MTBF | No estimable: 0 fallas. Cota: mayor a 86 h observadas | | |
 | MTTR | Sin fallas que reparar | ≤ 24 h | Sin evidencia |
@@ -33,6 +35,8 @@ Corridas registradas: 2; exitosas: 2. Duración media: 5.6 s. Última corrida: 7
 
 ## Lectura
 
+- **Evidencia incompleta: hay 5 días de bitácora y la entrega pide 7.** La captura programada empezó el 2026-11-09, tres días después de lo previsto; esos días no se pueden reponer y no se inventan.
+- La disponibilidad A = MTBF / (MTBF + MTTR) no se puede calcular sin fallas: no hay MTBF ni MTTR. Lo que se reporta es la disponibilidad operativa (días con captura exitosa entre días del periodo).
 - En 5 días no hubo fallas de fuentes obligatorias, así que la disponibilidad observada es de 100 % y cumple el objetivo.
 - **La muestra es muy chica.** Con 5 ejecuciones sin falla, lo único que se puede afirmar con 95 % de confianza es que la probabilidad de falla por ejecución es menor a 45 %. El MTBF y el MTTR no se pueden estimar todavía; se volverán a calcular en E2 con más historia.
 - La fuente opcional `cenace_pend_mda_manana` se omitió en 5 de 5 ejecuciones: a la hora de la corrida CENACE aún no publica el día siguiente. No afecta la disponibilidad, pero es una petición diaria que nunca ha traído datos; se registra como observación para mover su horario o retirarla.

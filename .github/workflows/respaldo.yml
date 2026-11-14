@@ -1,0 +1,32 @@
+name: Respaldo de bronce
+
+# Cada domingo empaqueta la capa bronce, prueba que se puede restaurar (compara el SHA-256
+# de cada archivo) y guarda el paquete como artefacto: una copia fuera del arbol de Git.
+
+on:
+  schedule:
+    - cron: "17 12 * * 0"   # domingos, 06:17 de Colima
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  respaldo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Empaquetar y probar la restauracion
+        run: python calidad/respaldo_bronce.py "$RUNNER_TEMP/respaldos"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bronce-${{ github.run_id }}
+          path: ${{ runner.temp }}/respaldos/
+          retention-days: 90

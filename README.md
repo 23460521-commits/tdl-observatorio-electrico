@@ -6,7 +6,7 @@ Proyecto Integrador TRUSTED DATA LAB (TecNM campus Colima): Ingeniería de Datos
 
 - Equipo: Julio Alberto Orozco Téllez · Ángel Salvador Álvarez · José Rey Sánchez Navarro
 - Entregas: [E0](docs/E0/ENTREGA.md) · [E1](docs/E1/ENTREGA.md) · [por qué cambió el tema](docs/E1/pivote-obraprecio.md)
-- Tablero público: _pendiente (E2)_
+- Tablero: `streamlit run tablero/app.py` (sin URL pública todavía) · [diccionario de datos](data/oro/DICCIONARIO.md)
 
 > El repositorio conserva el nombre de la propuesta original (Observatorio Eléctrico de Colima). La captura de CENACE sigue activa en bronce, pero el producto es ObraPrecio.
 
@@ -37,6 +37,7 @@ fuentes -> data/bronce (respuesta exacta + SHA-256)
 | `data/oro/obraprecio_ciudad_mensual.csv` | Una fila por ciudad y mes con los 4 componentes en columnas |
 | `data/oro/resumen_region_anual.csv` | Agregado por región, año y componente |
 | `data/oro/ranking_ciudades.csv` | Último mes: ciudades ordenadas por variación anual |
+| `data/oro/pronostico_mensual.csv` | Pronóstico a 12 meses con intervalos (Colima y Nacional) |
 
 ```bash
 python -m pipeline.ejecutar      # regenera plata, oro, cuarentena y calidad/reporte-puerta.json

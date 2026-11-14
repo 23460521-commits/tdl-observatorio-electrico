@@ -80,3 +80,36 @@ def test_elegir_sarima_devuelve_orden_con_d1_y_sin_diferencia_estacional(serie):
     orden, est, tabla = M.elegir_sarima(serie, max_pq=1)
     assert orden[1] == 1 and est[1] == 0 and est[3] == 12
     assert tabla["AIC"].is_monotonic_increasing
+
+
+def test_diagnostico_detecta_varianza_inestable():
+    rng = np.random.default_rng(5)
+    e = rng.normal(size=600)
+    vol = np.ones(600)
+    for i in range(1, 600):  # ARCH(1): la varianza depende del choque anterior
+        vol[i] = np.sqrt(0.2 + 0.75 * (e[i - 1] * vol[i - 1]) ** 2)
+    assert not M.diagnostico_residuos(e * vol)["varianza estable"]
+    assert M.diagnostico_residuos(e)["varianza estable"]
+
+
+def test_correlacion_cruzada_encuentra_el_rezago():
+    rng = np.random.default_rng(9)
+    z = pd.Series(rng.normal(size=300))
+    x = z.shift(3) + pd.Series(rng.normal(scale=0.3, size=300))
+    t = M.correlacion_cruzada(x, z, rezagos=6)
+    assert t.loc[t["correlacion"].idxmax(), "rezago"] == 3
+    assert t.attrs["limite"] < 0.13 and abs(t.loc[0, "correlacion"]) < 0.2
+
+
+def test_pronosticar_y_frase_para_el_cliente(serie):
+    from laboratorio import pronosticar as P
+
+    tabla = pd.DataFrame({"ciudad_id": "colima", "ciudad": "Colima", "fecha": serie.index,
+                          "indice_general": serie.to_numpy()})  # fmt: skip
+    tabla = pd.concat([tabla, tabla.assign(ciudad_id="nacional", ciudad="Nacional")])
+    p = P.pronosticar(tabla, h=6)
+    assert len(p) == 12 and (p["ic80_inf"] < p["pronostico_sarima"]).all()
+    assert (p["ic95_sup"] >= p["ic80_sup"]).all() and p["horizonte_meses"].max() == 6
+    assert p["error_esperado_sarima_pct"].iloc[3] == 1.56  # horizonte 4 usa el validado a 6
+    frase = P.frase_cliente(p.iloc[2])
+    assert "Colima" in frase and "80" in frase and "%" in frase

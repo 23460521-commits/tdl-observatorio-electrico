@@ -43,6 +43,11 @@ jobs:
         continue-on-error: true
         run: python -m pipeline.ejecutar
 
+      - name: Publicar el pronostico en la capa oro
+        if: steps.pipeline.outcome == 'success'
+        continue-on-error: true
+        run: python -m laboratorio.pronosticar
+
       - name: Subir datos y bitacoras
         if: always()
         run: |
