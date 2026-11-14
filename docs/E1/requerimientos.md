@@ -46,3 +46,28 @@ Estado: **borrador para revisión del responsable de Calidad** (José Rey Sánch
 
 ## Trazabilidad
 Cada requerimiento cumplido apunta a una prueba, un archivo de datos o una revisión automática. Los pendientes (RF-09 a RF-11) son el alcance de E2.
+
+Responsable: José Rey Sánchez Navarro
+Fecha: 13 de noviembre de 2026 a las 7:57
+
+Revisé los requerimientos funcionales y no funcionales del proyecto ObraPrecio. En general, considero que están bien organizados y explican lo que debe hacer el sistema.
+
+Sin embargo, encontré algunos puntos que todavía se deben revisar:
+
+Solo hay registros de 5 días y el proyecto pide 7 para comprobar la fiabilidad.
+
+No se pudieron calcular MTBF y MTTR porque no se presentaron fallas.
+
+Falta confirmar que las pruebas de seguridad estén actualizadas.
+
+Se debe comprobar el tiempo que tarda en ejecutarse el sistema en GitHub Actions.
+
+Hay que verificar que los comandos del proyecto funcionen correctamente.
+
+Los pronósticos todavía no están disponibles para todas las ciudades.
+
+Conclusión:
+
+Considero que los requerimientos están bien planteados y cumplen con la estructura solicitada. Solo hace falta revisar los puntos mencionados para poder dar la aprobación final.
+
+Estado: Revisado, pendiente de algunas correcciones y comprobaciones.
