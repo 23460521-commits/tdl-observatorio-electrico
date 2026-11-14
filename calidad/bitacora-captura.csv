@@ -14,3 +14,7 @@ ejecucion_id,disparador,fuente,inicio_utc,fin_utc,duracion_s,estado,registros,in
 43413090659,schedule,cenace_pend_mda,2026-11-13T10:57:17+00:00,2026-11-13T10:57:24+00:00,6.8,exito,1152,1,
 43413090659,schedule,cenace_pend_mda_manana,2026-11-13T10:57:24+00:00,2026-11-13T10:57:25+00:00,1.65,omitido,0,1,ValueError: Respuesta sin valores (status=ZERO_RESULTS); guardada en 105717Z_mda_manana_g0.json.gz
 43413090659,schedule,banxico_fix,2026-11-13T10:57:25+00:00,2026-11-13T10:57:27+00:00,2.27,exito,8,1,
+43585100342,schedule,inegi_inpp_construccion,2026-11-14T10:24:30+00:00,2026-11-14T10:24:30+00:00,0.0,omitido,0,0,RuntimeError: INEGI se captura los lunes (indice mensual); hoy no toca
+43585100342,schedule,cenace_pend_mda,2026-11-14T10:24:30+00:00,2026-11-14T10:24:53+00:00,22.78,fallo,0,1,"HTTPError: 400 Client Error: Bad Request for url: https://ws01.cenace.gob.mx:8082/SWPEND/SIM/SIN/MDA/COLIMA,MANZANILLO,GUADALAJARA,MONTERREY,VDM-CENTRO,CULIACAN,HERMOSILLO,MERIDA,PUEBLA,QUERETARO/2026/11/11/2026/11/14/JSON"
+43585100342,schedule,cenace_pend_mda_manana,2026-11-14T10:24:53+00:00,2026-11-14T10:25:16+00:00,22.58,omitido,0,1,"HTTPError: 400 Client Error: Bad Request for url: https://ws01.cenace.gob.mx:8082/SWPEND/SIM/SIN/MDA/COLIMA,MANZANILLO,GUADALAJARA,MONTERREY,VDM-CENTRO,CULIACAN,HERMOSILLO,MERIDA,PUEBLA,QUERETARO/2026/11/15/2026/11/15/JSON"
+43585100342,schedule,banxico_fix,2026-11-14T10:25:16+00:00,2026-11-14T10:25:18+00:00,2.4,exito,8,1,
