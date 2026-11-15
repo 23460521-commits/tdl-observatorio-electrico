@@ -15,11 +15,11 @@
     ]
   },
   "banxico_sie": {
-    "registros_bronce": 2509,
-    "registros_plata": 2481,
+    "registros_bronce": 2517,
+    "registros_plata": 2482,
     "registros_cuarentena": 0,
-    "duplicados_identicos_colapsados": 28,
-    "pct_aceptado": 98.88,
+    "duplicados_identicos_colapsados": 35,
+    "pct_aceptado": 98.61,
     "cuarentena_por_motivo": []
   },
   "cobertura": {
@@ -28,7 +28,7 @@
     "ciudades": 47,
     "series": 188,
     "fix_desde": "2017-01-02",
-    "fix_hasta": "2026-11-12",
+    "fix_hasta": "2026-11-13",
     "oro_desde": "2004-01-01",
     "oro_filas": 51512
   },
@@ -67,13 +67,13 @@
       "revision": "fix_dias_habiles_cubiertos",
       "ok": true,
       "grave": false,
-      "detalle": "93 de 2574 dias de lunes a viernes sin FIX (3.6%; los festivos bancarios no tienen FIX)"
+      "detalle": "93 de 2575 dias de lunes a viernes sin FIX (3.6%; los festivos bancarios no tienen FIX)"
     },
     {
       "revision": "tablas_no_vacias",
       "ok": true,
       "grave": true,
-      "detalle": "inpp=71788 filas, fix=2481 filas"
+      "detalle": "inpp=71788 filas, fix=2482 filas"
     }
   ],
   "salidas": [
@@ -84,8 +84,8 @@
     },
     {
       "archivo": "data/plata/fix_diario.csv",
-      "filas": 3602,
-      "sha256": "68d91084ff6007fb797fee78c9b2da30419462fcf8dd1fd2893a886317381d2f"
+      "filas": 3603,
+      "sha256": "ac2cb67f22b43adf77ec95ba7d0dcd4d905ca5d24e6686215f36d6ff57c12246"
     },
     {
       "archivo": "data/cuarentena/inegi_inpp.csv",
