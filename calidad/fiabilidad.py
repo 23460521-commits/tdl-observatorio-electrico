@@ -19,7 +19,8 @@ from datetime import datetime
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent
-OBLIGATORIAS = {"cenace_pend_mda", "banxico_fix"}
+OBLIGATORIAS = {"banxico_fix"}  # fuente diaria de ObraPrecio; INEGI es semanal (lunes)
+LEGADO_E0 = {"cenace_pend_mda", "cenace_pend_mda_manana"}  # fuentes de E0, no de ObraPrecio
 OBJETIVO_DISPONIBILIDAD = 95.0
 OBJETIVO_MTTR_H = 24.0
 DIAS_PEDIDOS = 7  # la entrega E1 pide siete dias de bitacora
@@ -43,12 +44,13 @@ def ejecuciones(filas):
         inicio = min(datetime.fromisoformat(f["inicio_utc"]) for f in fs)
         fin = max(datetime.fromisoformat(f["fin_utc"]) for f in fs)
         fallas = [f["fuente"] for f in fs if f["fuente"] in OBLIGATORIAS and f["estado"] == "fallo"]
+        fallas_todas = [f["fuente"] for f in fs if f["estado"] == "fallo"]
         salida.append({
             "id": eid, "disparador": fs[0]["disparador"], "inicio": inicio, "fin": fin,
             "duracion_s": sum(float(f["duracion_s"]) for f in fs),
-            "exito": not fallas, "fallas": fallas,
+            "exito": not fallas, "fallas": fallas, "fallas_todas": fallas_todas,
             "omitidas": [f["fuente"] for f in fs if f["estado"] == "omitido"],
-            "reintentos": sum(int(f["intentos"]) - 1 for f in fs),
+            "reintentos": sum(max(0, int(f["intentos"]) - 1) for f in fs),
             "registros": sum(int(f["registros"] or 0) for f in fs),
         })  # fmt: skip
     return sorted(salida, key=lambda e: e["inicio"])
@@ -80,6 +82,9 @@ def indicadores(ejs):
         "duracion_media_s": sum(e["duracion_s"] for e in ejs) / n,
         "reintentos": sum(e["reintentos"] for e in ejs),
         "omitidas": sum(len(e["omitidas"]) for e in ejs),
+        "fallas_legado_e0": sum(
+            1 for e in ejs for f in e.get("fallas_todas", []) if f in LEGADO_E0
+        ),
     }  # fmt: skip
 
 
@@ -182,6 +187,11 @@ def reporte():
         "estimar todavía; se volverán a calcular en E2 con más historia."
         if k["mtbf_h"] is None
         else "- Ya hay fallas registradas: revisar el detalle por ejecución.",
+        "- **Fuente obligatoria de ObraPrecio: Banxico (FIX), diaria.** INEGI, la otra "
+        "fuente, se captura los lunes (índice mensual) y por eso no aparece a diario. "
+        "CENACE es fuente del proyecto anterior (E0): se sigue capturando por compatibilidad, "
+        f"pero ObraPrecio no depende de ella. Tuvo {k['fallas_legado_e0']} falla(s) en el periodo, "
+        "que no cuentan contra la disponibilidad de ObraPrecio.",
         f"- La fuente opcional `cenace_pend_mda_manana` se omitió en {k['omitidas']} de "
         f"{k['ejecuciones']} ejecuciones: a la hora de la corrida CENACE aún no publica el día "
         "siguiente. No afecta la disponibilidad, pero es una petición diaria que nunca ha "

@@ -32,7 +32,7 @@ Cifras de la corrida entregada:
 | Fuente | Bronce | Plata | Cuarentena | Duplicados idénticos | Aceptado |
 |---|---|---|---|---|---|
 | INEGI · INPP construcción residencial por ciudad | 96,392 | 71,788 | 24,604 | 0 | 74.48 % |
-| Banxico · FIX | 2,509 | 2,481 | 0 | 28 | 98.88 % |
+| Banxico · FIX | 2,517 | 2,482 | 0 | 35 | 98.61 % |
 
 Cobertura: 188 series (46 ciudades más Nacional × 4 componentes), enero de 1973 a octubre de 2026. Capa oro: 51,512 filas desde enero de 2004.
 
@@ -51,7 +51,7 @@ Serie: índice general de costo de construcción de Colima, enero de 2004 a octu
 | Criterio de la rúbrica | Evidencia (enlace) | Nota del equipo |
 |---|---|---|
 | Fiabilidad y disponibilidad (25) | [calidad/reporte-fiabilidad.md](../../calidad/reporte-fiabilidad.md) · [calidad/fiabilidad.py](../../calidad/fiabilidad.py) · [bitácora](../../calidad/bitacora-captura.csv) | Tasa de éxito 100 % (5 de 5), disponibilidad operativa 100 % contra el objetivo de 95 % de E0. **Solo 5 días de bitácora de los 7 pedidos** (la captura inició el 9). MTBF y MTTR no estimables sin fallas: se reporta la cota y el límite de confianza |
-| Seguridad (15) | [calidad/seguridad/](../../calidad/seguridad/README.md) · [respaldo probado](../../calidad/seguridad/respaldo-bronce.md) | gitleaks y pip-audit sin hallazgos, en local y en GitHub Actions. Tokens con permiso mínimo documentado. Respaldo de bronce restaurado: 2,137 archivos, 0 diferencias |
+| Seguridad (15) | [calidad/seguridad/](../../calidad/seguridad/README.md) · [respaldo probado](../../calidad/seguridad/respaldo-bronce.md) | gitleaks y pip-audit sin hallazgos, en local y en GitHub Actions. Tokens con permiso mínimo documentado. Respaldo de bronce restaurado: 2,139 archivos, 0 diferencias |
 | Requerimientos (10) | [requerimientos.md](requerimientos.md) | 11 funcionales y 15 no funcionales, cada uno con su comprobación; revisados contra necesario, no ambiguo, verificable y rastreable; revisión de José Rey con 7 observaciones y su atención |
 | Plan SQA (25) | [docs/plan-sqa.md](../plan-sqa.md) | Estructura IEEE 730 adaptada al proyecto, versión 1.2: revisada por José Rey, pendiente de su aprobación final |
 | Integración continua (15) | [.github/workflows/ci.yml](../../.github/workflows/ci.yml) · [tests/](../../tests/) | Pruebas (63), linter, puerta de datos y seguridad en cada push. Pipeline: 6 s en GitHub Actions |

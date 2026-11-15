@@ -64,14 +64,14 @@ Regla: toda cifra escrita en un documento debe poder regenerarse con un comando 
 | MTBF | Igual | Se reporta; sin objetivo aún | No estimable (0 fallas en 86 h) |
 | Tasa de éxito por ejecución | Igual | Se reporta | 100 % (5 de 5 ejecuciones) |
 | Días de bitácora | Igual | 7 | **5** (9 al 13 de noviembre) |
-| Registros aceptados por la puerta | `calidad/reporte-puerta.json` | Se reporta por fuente | INEGI 74.48 %, Banxico 98.88 % |
+| Registros aceptados por la puerta | `calidad/reporte-puerta.json` | Se reporta por fuente | INEGI 74.48 %, Banxico 98.84 % |
 | Registros perdidos sin motivo | Balance bronce = plata + cuarentena + duplicados | 0 | 0 |
 | Huecos dentro de las series | Revisión `continuidad_mensual` | 0 | 0 |
 | Pruebas automáticas que pasan | `pytest` | 100 % | 63 de 63 |
 | Errores de estilo | `ruff check .` | 0 | 0 |
 | Secretos expuestos | gitleaks | 0 | 0 |
 | Dependencias vulnerables | pip-audit | 0 | 0 |
-| Respaldo de bronce restaurable | `python calidad/respaldo_bronce.py` | 0 archivos distintos | 0 de 2,137 |
+| Respaldo de bronce restaurable | `python calidad/respaldo_bronce.py` | 0 archivos distintos | 0 de 2,139 |
 | Duración del pipeline en GitHub Actions | Pasos de la ejecución del CI | ≤ 60 s | 6 s |
 | Defectos registrados y cerrados | `calidad/defectos-e1.csv` | 100 % cerrados antes de etiquetar | 9 de 9 |
 | Error del pronóstico a 1 mes (MAPE) | `docs/E1/pronostico.ipynb` | Se reporta; objetivo por fijar con el cliente | 0.43 % (Colima, SARIMA) |

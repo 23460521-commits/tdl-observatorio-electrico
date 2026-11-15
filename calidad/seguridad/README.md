@@ -11,7 +11,7 @@ Revisión del 13 de noviembre de 2026 sobre la versión que se entrega. Los arch
 | Dependencias vulnerables | pip-audit | `requirements.txt` (29 paquetes con transitivas) y `tablero/requirements.txt` | **0 vulnerabilidades conocidas** | [pip-audit.json](pip-audit.json) |
 | Las mismas dos, en GitHub Actions | CI, trabajo `seguridad` | Commit `41e0f0f` (ejecución 43524364243) | **Verde**: pip-audit 13 s, gitleaks 1 s | Pestaña Actions del repositorio |
 | Token en la capa bronce | Búsqueda (`grep -rli token data/bronce`) | Archivos `.meta.json` | **Sin coincidencias**: la URL guardada no lleva el token (viaja en un encabezado) | |
-| Respaldo de la capa bronce | `python calidad/respaldo_bronce.py` | 2,137 archivos, 21.4 MB | **Restauración correcta**: 0 faltantes, 0 distintos | [respaldo-bronce.md](respaldo-bronce.md) |
+| Respaldo de la capa bronce | `python calidad/respaldo_bronce.py` | 2,139 archivos, 21.4 MB | **Restauración correcta**: 0 faltantes, 0 distintos | [respaldo-bronce.md](respaldo-bronce.md) |
 
 Hallazgos abiertos: ninguno.
 
@@ -29,7 +29,7 @@ No hay tokens personales ni llaves en el repositorio.
 
 ## Respaldo de la capa bronce
 
-Bronce es lo único que no se puede regenerar: plata y oro salen de ella. El script empaqueta `data/bronce`, lo restaura en una carpeta temporal y compara el SHA-256 de cada archivo contra el original; si uno solo no coincide, termina con error. La prueba local del 13 de noviembre restauró los 2,137 archivos sin diferencias. El flujo [respaldo.yml](../../.github/workflows/respaldo.yml) repite la prueba cada domingo y guarda el paquete como artefacto durante 90 días. **Ese flujo todavía no ha tenido su primera ejecución en GitHub.**
+Bronce es lo único que no se puede regenerar: plata y oro salen de ella. El script empaqueta `data/bronce`, lo restaura en una carpeta temporal y compara el SHA-256 de cada archivo contra el original; si uno solo no coincide, termina con error. La prueba local del 13 de noviembre restauró los 2,139 archivos sin diferencias. El flujo [respaldo.yml](../../.github/workflows/respaldo.yml) repite la prueba cada domingo y guarda el paquete como artefacto durante 90 días. **Ese flujo todavía no ha tenido su primera ejecución en GitHub.**
 
 ## Controles vigentes
 

@@ -43,7 +43,7 @@ Estado: **revisado por el responsable de Calidad (José Rey Sánchez Navarro) el
 | RNF-12 | Portabilidad: reproducibilidad | Cualquiera puede regenerar los resultados | Comandos documentados que corren en una máquina limpia | Instalación, ruff, pytest y pipeline corren en cada push en una máquina nueva de GitHub Actions. Los cuadernos y el tablero solo se han ejecutado en la sesión de desarrollo | Cumple para el pipeline; por confirmar para cuadernos y tablero |
 | RNF-13 | Uso ético de las fuentes | Respetar robots.txt, identificarse y no saturar | ≥ 1 s entre peticiones; User-Agent con contacto | Cubierto por pruebas de `extractores/base.py` | Cumple |
 | RNF-14 | Oportunidad del dato | El último mes publicado por INEGI está disponible | Rezago ≤ 2 meses respecto a la fuente | Último dato: octubre de 2026, capturado el 13 de noviembre de 2026 | Cumple (no cumplía con la estructura anterior del índice; ver limitación 1 de la ficha) |
-| RNF-15 | Seguridad: disponibilidad de los datos | La capa bronce se puede recuperar | Restauración de un respaldo sin diferencias (SHA-256) | 2,137 de 2,137 archivos restaurados iguales | Cumple en prueba local; el flujo semanal aún no corre en GitHub |
+| RNF-15 | Seguridad: disponibilidad de los datos | La capa bronce se puede recuperar | Restauración de un respaldo sin diferencias (SHA-256) | 2,139 de 2,139 archivos restaurados iguales | Cumple en prueba local; el flujo semanal aún no corre en GitHub |
 
 ## Revisión contra las características de un buen requerimiento
 Se revisaron los 26 requerimientos (11 funcionales y 15 no funcionales) contra cuatro características.
