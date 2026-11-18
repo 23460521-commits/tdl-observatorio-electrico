@@ -1,0 +1,28 @@
+{
+  "url": "https://ws01.cenace.gob.mx:8082/SWPEND/SIM/SIN/MDA/COLIMA,MANZANILLO,GUADALAJARA,MONTERREY,VDM-CENTRO,CULIACAN,HERMOSILLO,MERIDA,PUEBLA,QUERETARO/2026/11/15/2026/11/18/JSON",
+  "http_status": 200,
+  "capturado_utc": "2026-11-18T11:40:36.662402+00:00",
+  "zonas_solicitadas": [
+    "COLIMA",
+    "MANZANILLO",
+    "GUADALAJARA",
+    "MONTERREY",
+    "VDM CENTRO",
+    "CULIACAN",
+    "HERMOSILLO",
+    "MERIDA",
+    "PUEBLA",
+    "QUERETARO"
+  ],
+  "fecha_inicio": "2026-11-15",
+  "fecha_fin": "2026-11-18",
+  "sistema": "SIN",
+  "proceso": "MDA",
+  "intentos": 1,
+  "fuente": "cenace_pend",
+  "archivo": "114036Z_mda_reciente_g0.json.gz",
+  "bytes": 190914,
+  "sha256": "d76e14b567cc221787299142ad30af6c8ffc8d3244218f3ed0f975982d6ca5ab",
+  "user_agent": "TDL-ObservatorioElectricoColima/0.1.0 (proyecto academico TecNM campus Colima; contacto: 23460521@colima.tecnm.mx)",
+  "version_extractor": "0.1.0"
+}

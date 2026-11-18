@@ -30,3 +30,7 @@ ejecucion_id,disparador,fuente,inicio_utc,fin_utc,duracion_s,estado,registros,in
 44077615505,schedule,cenace_pend_mda,2026-11-17T11:50:53+00:00,2026-11-17T11:50:58+00:00,5.35,exito,1152,1,
 44077615505,schedule,cenace_pend_mda_manana,2026-11-17T11:50:58+00:00,2026-11-17T11:51:17+00:00,19.25,omitido,0,1,ValueError: Respuesta sin valores (status=ZERO_RESULTS); guardada en 115053Z_mda_manana_g0.json.gz
 44077615505,schedule,banxico_fix,2026-11-17T11:51:17+00:00,2026-11-17T11:51:20+00:00,2.67,exito,5,1,
+44296779085,schedule,inegi_inpp_construccion,2026-11-18T11:40:36+00:00,2026-11-18T11:40:36+00:00,0.0,omitido,0,0,RuntimeError: INEGI se captura los lunes (indice mensual); hoy no toca
+44296779085,schedule,cenace_pend_mda,2026-11-18T11:40:36+00:00,2026-11-18T11:40:40+00:00,3.84,exito,1152,1,
+44296779085,schedule,cenace_pend_mda_manana,2026-11-18T11:40:40+00:00,2026-11-18T11:40:44+00:00,4.13,omitido,0,1,ValueError: Respuesta sin valores (status=ZERO_RESULTS); guardada en 114036Z_mda_manana_g0.json.gz
+44296779085,schedule,banxico_fix,2026-11-18T11:40:44+00:00,2026-11-18T11:40:46+00:00,2.07,exito,6,1,
