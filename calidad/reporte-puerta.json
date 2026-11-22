@@ -15,11 +15,11 @@
     ]
   },
   "banxico_sie": {
-    "registros_bronce": 2562,
+    "registros_bronce": 2568,
     "registros_plata": 2486,
     "registros_cuarentena": 0,
-    "duplicados_identicos_colapsados": 76,
-    "pct_aceptado": 97.03,
+    "duplicados_identicos_colapsados": 82,
+    "pct_aceptado": 96.81,
     "cuarentena_por_motivo": []
   },
   "cobertura": {
