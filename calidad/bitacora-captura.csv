@@ -50,3 +50,7 @@ ejecucion_id,disparador,fuente,inicio_utc,fin_utc,duracion_s,estado,registros,in
 45017036504,schedule,cenace_pend_mda,2026-11-22T11:23:23+00:00,2026-11-22T11:23:28+00:00,5.44,exito,1152,1,
 45017036504,schedule,cenace_pend_mda_manana,2026-11-22T11:23:28+00:00,2026-11-22T11:23:30+00:00,1.68,omitido,0,1,ValueError: Respuesta sin valores (status=ZERO_RESULTS); guardada en 112323Z_mda_manana_g0.json.gz
 45017036504,schedule,banxico_fix,2026-11-22T11:23:30+00:00,2026-11-22T11:23:33+00:00,3.07,exito,6,1,
+45175815136,schedule,inegi_inpp_construccion,2026-11-23T12:36:27+00:00,2026-11-23T12:36:38+00:00,11.25,exito,4136,1,
+45175815136,schedule,cenace_pend_mda,2026-11-23T12:36:38+00:00,2026-11-23T12:36:57+00:00,19.27,exito,1152,1,
+45175815136,schedule,cenace_pend_mda_manana,2026-11-23T12:36:57+00:00,2026-11-23T12:36:59+00:00,1.69,omitido,0,1,ValueError: Respuesta sin valores (status=ZERO_RESULTS); guardada en 123627Z_mda_manana_g0.json.gz
+45175815136,schedule,banxico_fix,2026-11-23T12:36:59+00:00,2026-11-23T12:37:01+00:00,2.27,exito,5,1,

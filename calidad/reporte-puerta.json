@@ -1,11 +1,11 @@
 {
   "estado": "exito",
   "inegi_inpp": {
-    "registros_bronce": 100528,
+    "registros_bronce": 104664,
     "registros_plata": 71788,
     "registros_cuarentena": 24604,
-    "duplicados_identicos_colapsados": 4136,
-    "pct_aceptado": 71.41,
+    "duplicados_identicos_colapsados": 8272,
+    "pct_aceptado": 68.59,
     "cuarentena_por_motivo": [
       {
         "etapa": "formato",
@@ -15,11 +15,11 @@
     ]
   },
   "banxico_sie": {
-    "registros_bronce": 2568,
+    "registros_bronce": 2573,
     "registros_plata": 2486,
     "registros_cuarentena": 0,
-    "duplicados_identicos_colapsados": 82,
-    "pct_aceptado": 96.81,
+    "duplicados_identicos_colapsados": 87,
+    "pct_aceptado": 96.62,
     "cuarentena_por_motivo": []
   },
   "cobertura": {
